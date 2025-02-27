@@ -1,3 +1,5 @@
+@use "./mixins.scss";
+
 body {
-    background-color: aqua;
+    @include mixins.body-color;
 }
