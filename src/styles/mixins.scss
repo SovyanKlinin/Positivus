@@ -1,0 +1,49 @@
+$dark: #191A23;
+$black: #000000;
+$green: #B9FF66;
+
+@mixin reset-css {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@mixin container {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin button {
+    position: relative;
+    padding: 20px 35px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+@mixin button-hover {
+    background-color: $black;
+    color: white;
+    transition: 0.5s ease-out;
+    
+
+}
+
+@mixin hover-underline-after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: $green;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}

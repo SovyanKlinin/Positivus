@@ -1,6 +1,61 @@
 @use "./mixins.scss";
 @use "./fonts.scss";
 
+$dark: #191A23;
+$black: #000000;
+
 body {
+    @include mixins.reset-css;
     @include fonts.space-grotesk-regular;
+    color: $black;
+}
+
+.header {
+    @include mixins.container;
+    @include mixins.flex;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    &-logo {
+        padding: 10px 0;
+    }
+
+    &-nav {
+        @include mixins.flex;
+
+        .nav-items {
+            @include mixins.flex;
+            gap: 40px;
+            list-style: none;
+
+
+            &_item {
+
+                & a {
+                    position: relative;
+                    color: $black;
+                    text-decoration: none;
+                }
+
+                & a::after {
+                    @include mixins.hover-underline-after;
+                }
+
+                & a:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom center;
+                }
+
+                .item_item-button {
+                    @include mixins.button;
+                    cursor: pointer;
+
+                    &:hover {
+                        @include mixins.button-hover;
+                    }
+                }
+            }
+        }
+    }
+
 }
