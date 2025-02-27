@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -35,10 +36,17 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[hash][ext][query]',
+                    filename: 'images/[hash][ext]',
                 },
             },
 
+            {
+                test: /\.(woff2)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]',
+                },
+            },
 
             {
                 test: /\.(?:js|mjs|cjs)$/,
@@ -80,6 +88,11 @@ module.exports = {
             directory: path.join(__dirname, 'dist'),
         },
         open: true,
+    },
+
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
     },
 
     mode: 'development',
