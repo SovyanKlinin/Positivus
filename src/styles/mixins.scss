@@ -21,17 +21,20 @@ $green: #B9FF66;
 }
 
 @mixin button {
+    font-family: 'Space Grotesk';
+    font-style: normal;
     position: relative;
     padding: 20px 35px;
     border-radius: 10px;
     background-color: white;
+    cursor: pointer;
+    transition: 0.5s ease-out;
 }
 
 @mixin button-hover {
     background-color: $black;
     color: white;
     transition: 0.5s ease-out;
-    
 
 }
 
@@ -46,4 +49,41 @@ $green: #B9FF66;
     background-color: $green;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
+}
+
+@mixin text {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-family: 'Space Grotesk';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: $black;
+
+}
+
+@mixin h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 77px;
+    color: $black;
+}
+
+@mixin h2 {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 51px;
+    color: $black;
+}
+
+@mixin h3 {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    color: $black;
 }

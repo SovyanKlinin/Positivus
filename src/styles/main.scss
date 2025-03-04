@@ -3,10 +3,20 @@
 
 $dark: #191A23;
 $black: #000000;
+$green: #B9FF66;
+$grey: #F3F3F3;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     @include mixins.reset-css;
     @include fonts.space-grotesk-regular;
+    font-family: 'Space Grotesk';
+    font-style: normal;
     color: $black;
 }
 
@@ -48,7 +58,6 @@ body {
 
                 .item_item-button {
                     @include mixins.button;
-                    cursor: pointer;
 
                     &:hover {
                         @include mixins.button-hover;
@@ -57,5 +66,407 @@ body {
             }
         }
     }
+}
 
+.main {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    margin-top: 70px;
+
+    &-content {
+        @include mixins.flex;
+        justify-content: space-between;
+        width: 100%;
+
+        &-text {
+            @include mixins.flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 35px;
+            width: 530px;
+
+            &_title {
+                @include mixins.h1;
+                margin: 0;
+            }
+
+            &_text {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 28px;
+                color: $black;
+
+            }
+
+            &_button {
+                @include mixins.button;
+
+                &:hover {
+                    @include mixins.button-hover;
+                }
+            }
+        }
+
+        &-image {
+            position: relative;
+            width: 530px;
+            height: 480px;
+
+            &_image {
+                position: absolute;
+
+                &:nth-child(1) {
+                    top: 10px;
+                    right: 10px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(2) {
+                    top: 40px;
+                    right: 40px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(3) {
+                    top: 70px;
+                    right: 70px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(4) {
+                    top: 0;
+                    left: 60px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(5) {
+                    top: -30px;
+                    right: 120px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(6) {
+                    top: 0;
+                    right: 30px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(7) {
+                    top: 100px;
+                    right: 50px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(8) {
+                    top: 240px;
+                    right: 70px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(9) {
+                    top: -20px;
+                    left: -80px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(10) {
+                    top: 30px;
+                    left: 0;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(11) {
+                    bottom: 100px;
+                    right: 160px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(12) {
+                    bottom: 80px;
+                    left: -70px;
+                    transition: 0.5s ease-out;
+                }
+
+                &:nth-child(13) {
+                    bottom: 10px;
+                    left: 120px;
+                    transition: 0.5s ease-out;
+                }
+            }
+        }
+
+        &:hover .png-circle1 {
+            top: -40px;
+            right: -40px;
+            transform: rotate(-15deg);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-circle2 {
+            transform: rotate(-15deg);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-circle3 {
+            top: 130px;
+            right: 130px;
+            transform: rotate(-15deg);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-megaphone {
+            transform: rotate(10deg);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-heart {
+            top: -40px;
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-line {
+            top: -20px;
+            right: 20px;
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-video {
+            top: 90px;
+            right: 40px;
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-location {
+            top: 220px;
+            right: 40px;
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-ellipse-black {
+            transform: scale(0.5);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-ellipse-green-big {
+            transform: scale(1.5);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-ellipse-green-min {
+            transform: scale(1.5);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-star-big {
+            transform: scale(0.5) rotate(100deg);
+            transition: 0.5s ease-out;
+        }
+
+        &:hover .png-star-little {
+            transform: scale(1.5) rotate(-100deg);
+            transition: 0.5s ease-out;
+        }
+    }
+
+    &-logo {
+        @include mixins.flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 70px;
+
+    }
+
+}
+
+.services {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 70px;
+
+    &-text {
+        @include mixins.flex;
+        gap: 40px;
+
+        &_title {
+            @include mixins.h2;
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: $green;
+        }
+
+        &_text {
+            @include mixins.text;
+            width: 580px;
+        }
+    }
+
+    &-items {
+        @include mixins.flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 80px;
+
+        &_item {
+            @include mixins.flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 87px;
+            position: relative;
+            padding: 50px 310px 50px 50px;
+            border: $black 1px solid;
+            border-radius: 45px;
+            background-color: $grey;
+            box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
+            transition: 0.25s ease-out;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 10px 10px 0px rgb(0, 0, 0);
+                transition: 0.25s ease-out;
+
+            }
+
+            .item_item-title {
+                @include mixins.h3;
+                width: 230px;
+
+                & p {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0px 7px;
+                    background: #B9FF66;
+                    border-radius: 7px;
+                }
+            }
+
+            .item_item-button {
+
+                & a {
+                    @include mixins.flex;
+                    @include mixins.text;
+                    gap: 10px;
+                    text-decoration: none;
+
+                    p {
+                        position: relative;
+                    }
+
+                    p::after {
+                        @include mixins.hover-underline-after;
+                        background-color: $black;
+                    }
+
+                    p:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom center;
+                    }
+                }
+            }
+
+            .item_item-image {
+                @include mixins.flex;
+                width: 210px;
+                height: 170px;
+                position: absolute;
+                top: 70px;
+                right: 50px;
+            }
+        }
+
+        .green-item {
+            background-color: $green;
+
+            & .item_item-title p {
+                background-color: #ffffff;
+            }
+        }
+
+        .black-item {
+            background-color: $black;
+
+            & .item_item-title p {
+                background-color: #ffffff;
+            }
+
+            & a p {
+                color: #ffffff;
+            }
+
+            & a p::after {
+                background-color: $green;
+            }
+        }
+    }
+
+    .proposal {
+        @include mixins.flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px;
+        position: relative;
+        width: 100%;
+        margin-top: 123px;
+        padding: 60px;
+        background-color: $grey;
+        border-radius: 45px;
+
+        &_proposal-title {
+            @include mixins.h3;
+        }
+
+        &_proposal-text {
+            @include mixins.text;
+            width: 500px;
+        }
+
+        &_proposal-button {
+            & button {
+                @include mixins.button;
+                background-color: $black;
+                color: #ffffff;
+
+                &:hover {
+                    @include mixins.button-hover;
+                    background-color: $grey;
+                    color: $black;
+                }
+            }
+        }
+
+        &_proposal-image {
+            position: absolute;
+            top: -30px;
+            right: 130px;
+        }
+    }
+}
+
+.case-studies {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 163px;
+
+    &-text {
+        @include mixins.flex;
+        gap: 40px;
+
+        &_title {
+            @include mixins.h2;
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: $green;
+        }
+
+        &_text {
+            @include mixins.text;
+            width: 580px;
+        }
+    }
 }
