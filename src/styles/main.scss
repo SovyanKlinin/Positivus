@@ -360,11 +360,11 @@ body {
                         @include mixins.hover-underline-after;
                         background-color: $black;
                     }
+                }
 
-                    p:hover::after {
-                        transform: scaleX(1);
-                        transform-origin: bottom center;
-                    }
+                &:hover p::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom center;
                 }
             }
 
@@ -467,6 +467,57 @@ body {
         &_text {
             @include mixins.text;
             width: 580px;
+        }
+    }
+
+    &-content {
+        @include mixins.flex;
+        justify-content: space-between;
+        margin-top: 80px;
+        padding: 70px 60px 70px;
+        background-color: $dark;
+        border-radius: 45px;
+        width: 100%;
+
+        &_item {
+            @include mixins.flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+            &:nth-child(2) {
+                padding-left: 64px;
+                padding-right: 64px;
+                border-left: 1px solid #ffffff;
+                border-right: 1px solid #ffffff;
+            }
+
+            .item_item-text {
+                width: 280px;
+                color: #ffffff;
+            }
+
+            .item_item-link {
+                @include mixins.flex;
+                gap: 15px;
+                text-decoration: none;
+
+                & p {
+                    padding-bottom: 5px;
+                    color: $green;
+                    position: relative;
+
+                    &::after {
+                        @include mixins.hover-underline-after;
+                        background-color: $green;
+                    }
+                }
+
+                &:hover p::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom center;
+                }
+            }
         }
     }
 }

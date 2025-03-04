@@ -1,175 +1,227 @@
-<head><script defer src="js/indexbundle.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve './../assets/images/Logo.png' in 'C:\Users\ivani\Desktop\project\Task2\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './../assets/images/Logo.png' in 'C:\Users\ivani\Desktop\project\Task2\src'
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\Compilation.js:2123:28
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:923:13
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:339:22
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:151:10
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:783:25
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:1008:8
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:1137:5
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:1112:14)
-      at arrayEachFunc (C:\Users\ivani\Desktop\project\Task2\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\Users\ivani\Desktop\project\Task2\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:1036:12)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\webpack\lib\NormalModuleFactory.js:968:18
-      at finishWithoutResolve (C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\Users\ivani\Desktop\project\Task2\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\Users\ivani\Desktop\project\Task2\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  
-  - Compilation.js:2123 
-    [Task2]/[webpack]/lib/Compilation.js:2123:28
-  
-  - NormalModuleFactory.js:923 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:923:13
-  
-  
-  - NormalModuleFactory.js:339 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:339:22
-  
-  
-  - NormalModuleFactory.js:520 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:520:22
-  
-  - NormalModuleFactory.js:151 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:151:10
-  
-  - NormalModuleFactory.js:783 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:783:25
-  
-  - NormalModuleFactory.js:1008 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:1008:8
-  
-  - NormalModuleFactory.js:1137 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:1137:5
-  
-  - async.js:6883 
-    [Task2]/[neo-async]/async.js:6883:13
-  
-  - NormalModuleFactory.js:1112 Array.<anonymous>
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:1112:14
-  
-  - async.js:2517 arrayEachFunc
-    [Task2]/[neo-async]/async.js:2517:19
-  
-  - async.js:6858 Object.parallel
-    [Task2]/[neo-async]/async.js:6858:9
-  
-  - NormalModuleFactory.js:1036 NormalModuleFactory._resolveResourceErrorHints
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:1036:12
-  
-  - NormalModuleFactory.js:968 
-    [Task2]/[webpack]/lib/NormalModuleFactory.js:968:18
-  
-  - Resolver.js:567 finishWithoutResolve
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:567:11
-  
-  - Resolver.js:656 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:656:15
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - DescriptionFilePlugin.js:89 
-    [Task2]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - RootsPlugin.js:38 
-    [Task2]/[enhanced-resolve]/lib/RootsPlugin.js:38:38
-  
-  
-  
-  - ConditionalPlugin.js:40 
-    [Task2]/[enhanced-resolve]/lib/ConditionalPlugin.js:40:47
-  
-  
-  
-  - ConditionalPlugin.js:40 
-    [Task2]/[enhanced-resolve]/lib/ConditionalPlugin.js:40:47
-  
-  
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - DescriptionFilePlugin.js:89 
-    [Task2]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [Task2]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - DirectoryExistsPlugin.js:41 
-    [Task2]/[enhanced-resolve]/lib/DirectoryExistsPlugin.js:41:15
-  
-  - task_queues:81 process.processTicksAndRejections
-    node:internal/process/task_queues:81:21
-  
-  - child-compiler.js:211 
-    [Task2]/[html-webpack-plugin]/lib/child-compiler.js:211:18
-  
-  - Compiler.js:629 finalCallback
-    [Task2]/[webpack]/lib/Compiler.js:629:5
-  
-  - Compiler.js:664 
-    [Task2]/[webpack]/lib/Compiler.js:664:11
-  
-  - Compiler.js:1350 
-    [Task2]/[webpack]/lib/Compiler.js:1350:17
-  
-</pre>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positivus</title>
+<script defer src="js/indexbundle.js"></script></head>
+
+<body>
+
+  <header class="header">
+    <div class="header-logo">
+      <img src="images/5a0d0923ea559f0a488e.png" alt="" class="header-logo_logo">
+    </div>
+    <nav class="header-nav">
+      <ul class="nav-items">
+        <li class="nav-items_item">
+          <a href="#">About us</a>
+        </li>
+        <li class="nav-items_item">
+          <a href="#">Services</a>
+        </li>
+        <li class="nav-items_item">
+          <a href="#">Use Cases</a>
+        </li>
+        <li class="nav-items_item">
+          <a href="#">Pricing</a>
+        </li>
+        <li class="nav-items_item">
+          <a href="#">Blog</a>
+        </li>
+        <li class="nav-items_item">
+          <button class="item_item-button">Request a quote</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main">
+    <article class="main-content">
+      <div class="main-content-text">
+        <h1 class="main-content-text_title">
+          Navigating the digital landscape for success
+        </h1>
+        <div class="main-content-text_text">
+          Our digital marketing agency helps businesses grow and succeed
+          online through a range of services
+          including SEO, PPC, social media marketing, and content creation.
+        </div>
+        <button type="button" class="main-content-text_button">Book a consultation</button>
+      </div>
+      <div class="main-content-image">
+        <img src="images/3b2d3272d8571be863b4.png" alt="" class="main-content-image_image png-circle1">
+        <img src="images/1b033e841922dd216ee6.png" alt="" class="main-content-image_image png-circle2">
+        <img src="images/5942aa78b646656e1e89.png" alt="" class="main-content-image_image png-circle3">
+        <img src="images/d2e09dc7537115f06351.png" alt="" class="main-content-image_image png-megaphone">
+        <img src="images/488ca2e322c7253a5749.png" alt="" class="main-content-image_image png-heart">
+        <img src="images/ec029e3cd458a5223299.png" alt="" class="main-content-image_image png-line">
+        <img src="images/18fd94b1147204c1efa1.png" alt="" class="main-content-image_image png-video">
+        <img src="images/b9034d502e5d6e37168c.png" alt="" class="main-content-image_image png-location">
+        <img src="images/22c1cb80fed1834ca0ac.png" alt=""
+          class="main-content-image_image png-ellipse-black">
+        <img src="images/5d74b9b9383de0eec3d1.png" alt=""
+          class="main-content-image_image png-ellipse-green-big">
+        <img src="images/4f623fbeb124d403b09e.png" alt=""
+          class="main-content-image_image png-ellipse-green-min">
+        <img src="images/fd1fb61c3c20ffe4fff3.png" alt="" class="main-content-image_image png-star-big">
+        <img src="images/4695108aa9e7b4df601b.png" alt="" class="main-content-image_image png-star-little">
+      </div>
+    </article>
+    <article class="main-logo">
+      <div class="main-logo_logo">
+        <img src="images/c1c473edaf8b894f0f9f.png" alt="">
+      </div>
+      <div class="main-logo_logo">
+        <img src="images/7720ec9ca9084e59eb8c.png" alt="">
+      </div>
+      <div class="main-logo_logo">
+        <img src="images/a7e379e1762ccb2cdbf7.png" alt="">
+      </div>
+      <div class="main-logo_logo">
+        <img src="images/d1a32802a992dfdb76cf.png" alt="">
+      </div>
+      <div class="main-logo_logo">
+        <img src="images/367c52901a11b0dc98a7.png" alt="">
+      </div>
+      <div class="main-logo_logo">
+        <img src="images/fa321e37d1240e25ee24.png" alt="">
+      </div>
+    </article>
+  </section>
+
+  <section class="services">
+    <article class="services-text">
+      <h2 class="services-text_title">Services</h2>
+      <div class="services-text_text">At our digital marketing agency, we offer a range of services
+        to help businesses grow and succeed online. These services include:</div>
+    </article>
+    <article class="services-items">
+      <div class="services-items_item">
+        <div class="item_item-title">
+          <p>Search engine</p>
+          <p>optimization</p>
+        </div>
+        <div class="item_item-button">
+          <a href="#">
+            <svg viewBox="0 0 41 41" width="41" height="41">
+              <use href="images/a717911d1dd026de51db.svg#services-button">
+            </svg>
+            <p>Learn more</p>
+          </a>
+        </div>
+        <div class="item_item-image">
+          <img src="images/f6a48d774899d33313ed.png" alt="">
+        </div>
+      </div>
+      <div class="services-items_item green-item">
+        <div class="item_item-title">
+          <p>Pay-per-click</p>
+          <p>advertising</p>
+        </div>
+        <div class="item_item-button">
+          <a href="#">
+            <svg viewBox="0 0 41 41" width="41" height="41">
+              <use href="images/a717911d1dd026de51db.svg#services-button">
+            </svg>
+            <p>Learn more</p>
+          </a>
+        </div>
+        <div class="item_item-image">
+          <img src="images/975ca6940342ae3cd6b2.png" alt="">
+        </div>
+      </div>
+      <div class="services-items_item black-item">
+        <div class="item_item-title">
+          <p>Social Media</p>
+          <p>Marketing</p>
+        </div>
+        <div class="item_item-button">
+          <a href="#">
+            <svg viewBox="0 0 41 41" width="41" height="41">
+              <use href="images/a717911d1dd026de51db.svg#services-button-white">
+            </svg>
+            <p>Learn more</p>
+          </a>
+        </div>
+        <div class="item_item-image">
+          <img src="images/02ac9eea9002db5c8e4a.png" alt="">
+        </div>
+      </div>
+      <div class="services-items_item">
+        <div class="item_item-title">
+          <p>Email</p>
+          <p>Marketing</p>
+        </div>
+        <div class="item_item-button">
+          <a href="#">
+            <svg viewBox="0 0 41 41" width="41" height="41">
+              <use href="images/a717911d1dd026de51db.svg#services-button">
+            </svg>
+            <p>Learn more</p>
+          </a>
+        </div>
+        <div class="item_item-image">
+          <img src="images/5db8db8afa072c2f4712.png" alt="">
+        </div>
+      </div>
+      <div class="services-items_item green-item">
+        <div class="item_item-title">
+          <p>Content</p>
+          <p>Creation</p>
+        </div>
+        <div class="item_item-button">
+          <a href="#">
+            <svg viewBox="0 0 41 41" width="41" height="41">
+              <use href="images/a717911d1dd026de51db.svg#services-button">
+            </svg>
+            <p>Learn more</p>
+          </a>
+        </div>
+        <div class="item_item-image">
+          <img src="images/3676ff17fc9cbc4e2f21.png" alt="">
+        </div>
+      </div>
+      <div class="services-items_item black-item">
+        <div class="item_item-title">
+          <p>Analytics and</p>
+          <p>Tracking</p>
+        </div>
+        <div class="item_item-button">
+          <a href="#">
+            <svg viewBox="0 0 41 41" width="41" height="41">
+              <use href="images/a717911d1dd026de51db.svg#services-button-white">
+            </svg>
+            <p>Learn more</p>
+          </a>
+        </div>
+        <div class="item_item-image">
+          <img src="images/f6c520aeea8b9b07dc87.png" alt="">
+        </div>
+      </div>
+    </article>
+    <article class="proposal">
+      <div class="proposal_proposal-title">Let’s make things happen</div>
+      <div class="proposal_proposal-text">Contact us today to learn more about how our digital
+        marketing services can help your business grow and succeed online.</div>
+      <div class="proposal_proposal-button">
+        <button type="button">Get your free proposal</button>
+      </div>
+      <div class="proposal_proposal-image">
+        <img src="images/05b44c89275d378b25c8.png" alt="">
+      </div>
+    </article>
+  </section>
+
+  <section class="case-studies">
+    <article class="case-studies-text">
+      <div class="case-studies-text_title">Case Studies</div>
+      <div class="case-studies-text_text">Explore Real-Life Examples of Our Proven Digital
+        Marketing Success through Our Case Studies</div>
+    </article>
+  </section>
+
+</body>
+
+</html>
