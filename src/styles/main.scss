@@ -521,3 +521,86 @@ body {
         }
     }
 }
+
+.process {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+
+    &-text {
+        @include mixins.flex;
+        gap: 40px;
+
+        &_title {
+            @include mixins.h2;
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: $green;
+        }
+
+        &_text {
+            @include mixins.text;
+            width: 290px;
+        }
+    }
+
+    &-items {
+        @include mixins.flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        margin-top: 80px;
+
+        &_item {
+            @include mixins.flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 40px 60px;
+            background-color: $grey;
+            border: 1px solid $black;
+            border-radius: 45px;
+            box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
+            transition: 0.25s ease-out;
+
+            &:hover {
+                box-shadow: 0px 10px 10px 0px rgb(0, 0, 0);
+                transition: 0.25s ease-out;
+            }
+
+            .item-visible {
+                @include mixins.flex;
+                justify-content: space-between;
+                width: 100%;
+                transition: 0.25s ease-out;
+
+                &_number {
+                    margin-right: 20px;
+                    font-weight: 500;
+                    font-size: 60px;
+                    line-height: 77px;
+                }
+
+                &_title {
+                    width: 100%;
+                    font-weight: 500;
+                    font-size: 30px;
+                    line-height: 38px;
+                }
+
+                &_button {
+                    cursor: pointer;
+                }
+            }
+
+            .item-invisible {
+                @include mixins.text;
+                padding-top: 30px;
+                border-top: 1px solid black;
+                transition: 0.25s ease-out;
+                display: none;
+            }
+        }
+    }
+}

@@ -1,10 +1,46 @@
 import './../styles/main.scss';
 
-function addNumbers() {
-    const num1 = parseFloat(document.getElementById("number1").value);
-    const num2 = parseFloat(document.getElementById("number2").value);
-    const result = num1 + num2;
-    document.getElementById("result").innerText = `Result: ${result}`;
+(function () {
+
+  const index = {
+
+    init() {
+
+      this.processItemOpen();
+
+    },
+
+    processItemOpen() {
+      const itemVisibleButton = Array.from(document.getElementsByClassName("item-visible_button"));
+      const itemVisibleButtonUse = Array.from(document.getElementsByClassName("itemVisibleButtonUse"));
+      const processItemsItem = Array.from(document.getElementsByClassName("process-items_item"));
+      const itemVisible = document.getElementsByClassName("item-visible");
+      const itemInvisible = document.getElementsByClassName("item-invisible");
+
+      itemVisibleButton.forEach((item) => {
+        item.addEventListener("click", function () {
+          const itemId = item.id;
+          console.log(itemId);
+
+          if (itemVisibleButtonUse[itemId].attributes.href.value == "images/svg.svg#plus") {
+            processItemsItem[itemId].style.backgroundColor = "#B9FF66";
+            itemVisible[itemId].style.paddingBottom = "30px";
+            itemInvisible[itemId].style.display = "block";
+            itemVisibleButtonUse[itemId].removeAttribute("href");
+            itemVisibleButtonUse[itemId].setAttribute("href", "images/svg.svg#minus");
+          } else {
+            processItemsItem[itemId].style.backgroundColor = "#F3F3F3";
+            itemVisibleButtonUse[itemId].removeAttribute("href");
+            itemVisible[itemId].style.paddingBottom = "0";
+            itemInvisible[itemId].style.display = "none";
+            itemVisibleButtonUse[itemId].setAttribute("href", "images/svg.svg#plus");
+          }
+        });
+      })
+    },
+
   }
-  
-  document.getElementById("calculate").addEventListener("click", addNumbers);
+
+  index.init();
+
+})();

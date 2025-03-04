@@ -28,4 +28,15 @@
             fill="#B9FF66" />
     </symbol>
 
+    <symbol fill="none" id="minus">
+        <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+        <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+    </symbol>
+
+    <symbol fill="none" id="plus">
+        <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+        <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+            fill="#191A23" />
+    </symbol>
+
 </svg>
