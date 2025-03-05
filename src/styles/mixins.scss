@@ -87,3 +87,12 @@ $green: #B9FF66;
     line-height: 38px;
     color: $black;
 }
+
+@mixin h4 {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: $black;
+}

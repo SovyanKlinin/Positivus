@@ -20,6 +20,26 @@ body {
     color: $black;
 }
 
+h1 {
+    @include mixins.h1;
+}
+
+h2 {
+    @include mixins.h2;
+}
+
+h3 {
+    @include mixins.h3;
+}
+
+h4 {
+    @include mixins.h4;
+}
+
+p {
+    @include mixins.text;
+}
+
 .header {
     @include mixins.container;
     @include mixins.flex;
@@ -332,10 +352,9 @@ body {
             }
 
             .item_item-title {
-                @include mixins.h3;
                 width: 230px;
 
-                & p {
+                & h3 {
                     display: inline-block;
                     margin: 0;
                     padding: 0px 7px;
@@ -381,7 +400,7 @@ body {
         .green-item {
             background-color: $green;
 
-            & .item_item-title p {
+            & .item_item-title h3 {
                 background-color: #ffffff;
             }
         }
@@ -389,7 +408,7 @@ body {
         .black-item {
             background-color: $black;
 
-            & .item_item-title p {
+            & .item_item-title h3 {
                 background-color: #ffffff;
             }
 
@@ -458,7 +477,6 @@ body {
         gap: 40px;
 
         &_title {
-            @include mixins.h2;
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
@@ -534,7 +552,6 @@ body {
         gap: 40px;
 
         &_title {
-            @include mixins.h2;
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
@@ -565,6 +582,7 @@ body {
             transition: 0.25s ease-out;
 
             &:hover {
+                transform: translateY(-5px);
                 box-shadow: 0px 10px 10px 0px rgb(0, 0, 0);
                 transition: 0.25s ease-out;
             }
@@ -584,9 +602,6 @@ body {
 
                 &_title {
                     width: 100%;
-                    font-weight: 500;
-                    font-size: 30px;
-                    line-height: 38px;
                 }
 
                 &_button {
@@ -601,6 +616,251 @@ body {
                 transition: 0.25s ease-out;
                 display: none;
             }
+        }
+    }
+}
+
+.team {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+
+    &-text {
+        @include mixins.flex;
+        gap: 40px;
+
+        &_title {
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: $green;
+        }
+
+        &_text {
+            @include mixins.text;
+            width: 470px;
+        }
+    }
+
+    &-items {
+        @include mixins.flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 80px;
+
+        .team-item {
+            @include mixins.flex;
+            flex-direction: column;
+            position: relative;
+            margin-bottom: 40px;
+            width: 390px;
+            padding: 40px 35px;
+            border: 1px solid $black;
+            border-radius: 45px;
+            box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
+            transition: 0.25s ease-out;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 10px 10px 0px rgb(0, 0, 0);
+                transition: 0.25s ease-out;
+            }
+
+            &_item-info {
+                @include mixins.flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                gap: 20px;
+                width: 100%;
+                padding-bottom: 28px;
+
+                .item-info_title {
+
+                    .title-position {
+                        @include mixins.text;
+                    }
+                }
+            }
+
+            &_item-text {
+                padding-top: 28px;
+                border-top: 1px solid $black;
+
+                & p {
+                    @include mixins.text;
+                    height: 115px;
+                }
+            }
+
+            &_link {
+                position: absolute;
+                top: 40px;
+                right: 35px;
+                cursor: pointer;
+
+                &:hover svg {
+                    transform: scale(1.1);
+                    transition: 0.25s ease-out;
+                }
+
+                & svg {
+                    transition: 0.25s ease-out;
+
+                }
+            }
+        }
+    }
+
+    &-button {
+        @include mixins.flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        & button {
+            @include mixins.button;
+            padding: 20px 76px;
+            border-radius: 14px;
+            background-color: $black;
+            color: #ffffff;
+
+            &:hover {
+                @include mixins.button-hover;
+                background-color: #ffffff;
+                color: $black;
+            }
+        }
+    }
+}
+
+.testimonials {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+
+    &-text {
+        @include mixins.flex;
+        gap: 40px;
+
+        &_title {
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: $green;
+        }
+
+        &_text {
+            @include mixins.text;
+            width: 470px;
+        }
+    }
+
+    .reviews {
+        @include mixins.flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 80px;
+        padding-top: 84px;
+        padding-bottom: 68px;
+        background-color: $dark;
+        border-radius: 45px;
+
+        &-items {
+            @include mixins.flex;
+            gap: 50px;
+            width: 100%;
+            overflow: hidden;
+
+            &_item {
+                @include mixins.flex;
+                flex-direction: column;
+
+                .item-text {
+                    position: relative;
+                    width: 500px;
+                    padding: 48px 52px;
+                    color: #ffffff;
+                    border: 1px solid $green;
+                    border-radius: 45px;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        background-color: $dark;
+                        border-bottom: 1px solid $green;
+                        border-left: 1px solid $green;
+                        transform: rotate(-45deg);
+                        bottom: -21px;
+                        left: 100px;
+                    }
+                }
+
+                .item-info {
+                    @include mixins.flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-top: 48px;
+
+                    & h4 {
+                        color: $green;
+                    }
+
+                    & p {
+                        color: #ffffff;
+                    }
+                }
+
+            }
+        }
+
+        &-nav {
+            @include mixins.flex;
+            justify-content: space-between;
+            margin-top: 124px;
+            width: 560px;
+
+            & svg {
+                cursor: pointer;
+            }
+
+            & ul {
+                @include mixins.flex;
+                gap: 20px;
+
+                & li {
+                    list-style: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    @include mixins.container;
+    @include mixins.flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+
+    &-text {
+        @include mixins.flex;
+        gap: 40px;
+
+        &_title {
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: $green;
+        }
+
+        &_text {
+            @include mixins.text;
+            width: 320px;
         }
     }
 }
