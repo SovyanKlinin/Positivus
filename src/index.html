@@ -624,25 +624,92 @@
       <div class="contact-text_text">Connect with Us: Let's Discuss Your Digital Marketing Needs</div>
     </article>
     <article class="contact-form">
-      <ul>
-        <li><input type="radio" name="radio" id="SayHi" checked>
+      <div class="contact-form_radio">
+        <div class="radio_say-hi-button"><input type="radio" name="radio" id="SayHi" checked>
           <label for="SayHi">Say Hi</label>
-          <input type="radio" name="radio" id="GetQuote">
+        </div>
+        <div class="radio_get-quote-button"><input type="radio" name="radio" id="GetQuote">
           <label for="GetQuote">Get a Quote</label>
-        </li>
+        </div>
+      </div>
+      <ul class="contact-form_inputs">
         <li>
           <label for="name">Name</label>
-          <input type="text" name="name">
+          <input type="text" name="name" placeholder="Name">
         </li>
         <li>
-          <label for="name">Name</label>
-          <input type="text" name="name">
+          <label for="email">Email*</label>
+          <input type="email" name="email" placeholder="Email">
+        </li>
+        <li>
+          <label for="message">Message*</label>
+          <textarea type="text" name="message" placeholder="Message"></textarea>
         </li>
       </ul>
-      
-      
+      <button type="button" class="contact-form_button">Send Message</button>
     </article>
   </section>
+
+  <footer class="footer">
+    <article class="footer-nav">
+      <div class="footer-nav_logo">
+        <img src="./assets/images/footer-logo.png" alt="">
+      </div>
+      <ul class="footer-nav_nav">
+        <li>
+          <a href="#">About us</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">Use Cases</a>
+        </li>
+        <li>
+          <a href="#">Pricing</a>
+        </li>
+        <li>
+          <a href="#">Blog</a>
+        </li>
+      </ul>
+      <div class="footer-nav_social">
+        <a href="#">
+          <svg width="30" height="30" viewBox="0 0 30 30">
+            <use href="svg.svg#social-in">
+          </svg>
+        </a>
+        <a href="#">
+          <svg width="30" height="30" viewBox="0 0 30 30">
+            <use href="svg.svg#social-facebook">
+          </svg>
+        </a>
+        <a href="#">
+          <svg width="30" height="30" viewBox="0 0 30 30">
+            <use href="svg.svg#social-twitter">
+          </svg>
+        </a>
+      </div>
+    </article>
+    <article class="footer-form">
+      <div class="form-info">
+        <h4 class="form-info_title">Contact us:</h4>
+        <div class="form-info_text">
+          <p>Email: info@positivus.com</p>
+          <p>Phone: 555-567-8901</p>
+          <p>Address: 1234 Main St<br>
+            Moonstone City, Stardust State 12345</p>
+        </div>
+      </div>
+      <div class="form-form">
+        <input type="text" placeholder="Email">
+        <button type="button">Subscribe to news</button>
+      </div>
+    </article>
+    <article class="footer-copyright">
+      <p>© 2023 Positivus. All Rights Reserved.</p>
+      <a href="#">Privacy Policy</a>
+    </article>
+  </footer>
 
 </body>
 

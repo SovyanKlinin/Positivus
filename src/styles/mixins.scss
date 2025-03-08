@@ -28,13 +28,13 @@ $green: #B9FF66;
     border-radius: 10px;
     background-color: white;
     cursor: pointer;
-    transition: 0.5s ease-out;
+    transition: 0.25s ease-out;
 }
 
 @mixin button-hover {
     background-color: $black;
     color: white;
-    transition: 0.5s ease-out;
+    transition: 0.25s ease-out;
 
 }
 
