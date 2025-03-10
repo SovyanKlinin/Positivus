@@ -7,6 +7,7 @@ import './../styles/main.scss';
     init() {
 
       this.processItemOpen();
+      this.darkTheme();
 
     },
 
@@ -38,6 +39,67 @@ import './../styles/main.scss';
         });
       })
     },
+
+    darkTheme() {
+      const themeButton = document.getElementById("themeButton");
+      const body = document.body;
+      const navHeader = Array.from(document.getElementsByClassName("navLink"));
+      const headerLogo = document.getElementById("headerLogo");
+      const mainContentTextTitle = document.getElementsByClassName("main-content-text_title")[0];
+      const text = Array.from(document.getElementsByClassName("text"));
+      const caseStudiesContent = document.getElementsByClassName("case-studies-content")[0];
+      const teamItem = Array.from(document.getElementsByClassName("team-item"));
+      const reviews = document.getElementsByClassName("reviews")[0];
+      const itemText = Array.from(document.getElementsByClassName("item-text"));
+      const footer = document.getElementsByClassName("footer")[0];
+      const labelThemeButton = document.getElementById("labelThemeButton")
+
+      themeButton.addEventListener('change', function () {
+        if (this.checked) {
+          body.classList.add("dark-bg");
+          labelThemeButton.style.borderColor = "white";
+          navHeader.forEach((e) => {
+            e.classList.add("white-text");
+          });
+          text.forEach((e) => {
+            e.classList.add("white-text");
+          });
+          teamItem.forEach((e) => {
+            e.classList.add("white-bg");
+          });
+          itemText.forEach((e) => {
+            e.classList.add("dark-bg");
+          });
+          headerLogo.removeAttribute("src");
+          headerLogo.setAttribute("src", "images/Logo-white.png");
+          mainContentTextTitle.classList.add("white-text");
+          caseStudiesContent.classList.add("black-bg");
+          reviews.classList.add("black-bg");
+          footer.classList.add("black-bg");
+        } else {
+          body.classList.remove("dark-bg");
+          labelThemeButton.style.borderColor = "black";
+          navHeader.forEach((e) => {
+            e.classList.remove("white-text");
+          });
+          text.forEach((e) => {
+            e.classList.remove("white-text");
+          });
+          teamItem.forEach((e) => {
+            e.classList.remove("white-bg");
+          });
+          itemText.forEach((e) => {
+            e.classList.remove("dark-bg");
+          });
+          headerLogo.removeAttribute("src");
+          headerLogo.setAttribute("src", "images/Logo.png");
+          mainContentTextTitle.classList.remove("white-text");
+          caseStudiesContent.classList.remove("black-bg");
+          reviews.classList.remove("black-bg");
+          footer.classList.remove("black-bg");
+        }
+      })
+    }
 
   }
 

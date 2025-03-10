@@ -10,6 +10,7 @@ $grey: #F3F3F3;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: 500ms;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
     font-family: 'Space Grotesk';
     font-style: normal;
     color: $black;
+    transition: 0.5s ease-out; 
 }
 
 h1 {
@@ -38,6 +40,26 @@ h4 {
 
 p {
     @include mixins.text;
+}
+
+.white-text {
+    color: #ffffff !important;
+}
+
+.dark-bg {
+    background-color: $dark !important;
+}
+
+.green-bg {
+    background-color: $green !important;
+}
+
+.white-bg {
+    background-color: #ffffff !important;
+}
+
+.black-bg {
+    background-color: $black !important;
 }
 
 input[type="checkbox"],
@@ -75,6 +97,7 @@ input[type="radio"] {
     @include mixins.flex;
     justify-content: space-between;
     margin-top: 60px;
+    transition: 500ms;
 
     &-logo {
         padding: 10px 0;
@@ -111,6 +134,50 @@ input[type="radio"] {
 
                     &:hover {
                         @include mixins.button-hover;
+                    }
+                }
+
+                & .mode input {
+                    height: 0;
+                    width: 0;
+                    visibility: hidden;
+
+                    &:checked + label {
+                        background: $dark;
+                    }
+
+                    &:checked + label:after {
+                        left: calc(100% - 5px);
+                        transform: translateX(-100%);
+                        background-color: $green;
+                    }
+                }
+
+                & .mode label {
+                    cursor: pointer;
+                    text-indent: -9999px;
+                    width: 52px;
+                    height: 27px;
+                    background: $grey;
+                    float: right;
+                    border-radius: 100px;
+                    position: relative;
+                    border: 1px solid $black;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 3px;
+                        width: 20px;
+                        height: 20px;
+                        background: $dark;
+                        border-radius: 90px;
+                        transition: 0.3s;
+                    }
+
+                    &:active:after {
+                        width: 15px;
                     }
                 }
             }
@@ -343,10 +410,10 @@ input[type="radio"] {
         gap: 40px;
 
         &_title {
-            @include mixins.h2;
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
+            border-radius: 7px;
         }
 
         &_text {
@@ -510,6 +577,7 @@ input[type="radio"] {
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
+            border-radius: 7px;
         }
 
         &_text {
@@ -585,6 +653,7 @@ input[type="radio"] {
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
+            border-radius: 7px;
         }
 
         &_text {
@@ -779,6 +848,7 @@ input[type="radio"] {
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
+            border-radius: 7px;
         }
 
         &_text {
@@ -887,6 +957,7 @@ input[type="radio"] {
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
+            border-radius: 7px;
         }
 
         &_text {
