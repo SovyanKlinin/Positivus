@@ -5,6 +5,7 @@ $dark: #191A23;
 $black: #000000;
 $green: #B9FF66;
 $grey: #F3F3F3;
+$darkgrey: #292A32;
 
 * {
     padding: 0;
@@ -19,11 +20,20 @@ body {
     font-family: 'Space Grotesk';
     font-style: normal;
     color: $black;
-    transition: 0.5s ease-out; 
+    transition: 0.5s ease-out;
+    background-color: #ffffff;
+}
+
+html[theme='dark'] body {
+    background-color: $dark;
 }
 
 h1 {
     @include mixins.h1;
+
+    html[theme='dark'] & {
+        color: #ffffff;
+    }
 }
 
 h2 {
@@ -40,26 +50,6 @@ h4 {
 
 p {
     @include mixins.text;
-}
-
-.white-text {
-    color: #ffffff !important;
-}
-
-.dark-bg {
-    background-color: $dark !important;
-}
-
-.green-bg {
-    background-color: $green !important;
-}
-
-.white-bg {
-    background-color: #ffffff !important;
-}
-
-.black-bg {
-    background-color: $black !important;
 }
 
 input[type="checkbox"],
@@ -99,6 +89,10 @@ input[type="radio"] {
     margin-top: 60px;
     transition: 500ms;
 
+    @media screen and (max-width: 1250px) {
+        width: 1000px;
+    }
+
     &-logo {
         padding: 10px 0;
     }
@@ -118,6 +112,11 @@ input[type="radio"] {
                     position: relative;
                     color: $black;
                     text-decoration: none;
+
+                    html[theme='dark'] & {
+                        color: #ffffff;
+                    }
+
                 }
 
                 & a::after {
@@ -142,11 +141,11 @@ input[type="radio"] {
                     width: 0;
                     visibility: hidden;
 
-                    &:checked + label {
+                    &:checked+label {
                         background: $dark;
                     }
 
-                    &:checked + label:after {
+                    &:checked+label:after {
                         left: calc(100% - 5px);
                         transform: translateX(-100%);
                         background-color: $green;
@@ -163,6 +162,10 @@ input[type="radio"] {
                     border-radius: 100px;
                     position: relative;
                     border: 1px solid $black;
+
+                    html[theme='dark'] & {
+                        border: 1px solid $green;
+                    }
 
                     &::after {
                         content: '';
@@ -191,6 +194,10 @@ input[type="radio"] {
     flex-direction: column;
     margin-top: 70px;
 
+    @media screen and (max-width: 1250px) {
+        width: 1000px;
+    }
+
     &-content {
         @include mixins.flex;
         justify-content: space-between;
@@ -215,6 +222,10 @@ input[type="radio"] {
                 font-size: 20px;
                 line-height: 28px;
                 color: $black;
+
+                html[theme='dark'] & {
+                    color: #ffffff;
+                }
 
             }
 
@@ -405,6 +416,10 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 70px;
 
+    @media screen and (max-width: 1250px) {
+        width: 1000px;
+    }
+
     &-text {
         @include mixins.flex;
         gap: 40px;
@@ -419,6 +434,10 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 580px;
+
+            html[theme='dark'] & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -440,6 +459,12 @@ input[type="radio"] {
             background-color: $grey;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
+
+            @media screen and (max-width: 1250px) {
+                width: 390px;
+                height: 322px;
+                padding: 50px 50px 50px 50px;
+            }
 
             &:hover {
                 transform: translateY(-5px);
@@ -470,6 +495,10 @@ input[type="radio"] {
 
                     p {
                         position: relative;
+
+                        @media screen and (max-width: 1250px) {
+                            display: none;
+                        }
                     }
 
                     p::after {
@@ -491,6 +520,17 @@ input[type="radio"] {
                 position: absolute;
                 top: 70px;
                 right: 50px;
+
+                @media screen and (max-width: 1250px) {
+                    top: 130px;
+                    right: 0;
+                }
+
+                & img {
+                    @media screen and (max-width: 1250px) {
+                        transform: scale(0.5);
+                    }
+                }
             }
         }
 
@@ -558,6 +598,10 @@ input[type="radio"] {
             position: absolute;
             top: -30px;
             right: 130px;
+
+            @media screen and (max-width: 1250px) {
+                right: 90px;
+            }
         }
     }
 }
@@ -568,6 +612,11 @@ input[type="radio"] {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 163px;
+    overflow: hidden;
+
+    @media screen and (max-width: 1250px) {
+        width: 1000px;
+    }
 
     &-text {
         @include mixins.flex;
@@ -583,6 +632,10 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 580px;
+
+            html[theme='dark'] & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -595,17 +648,37 @@ input[type="radio"] {
         border-radius: 45px;
         width: 100%;
 
+        @media screen and (max-width: 1250px) {
+            padding: 0;
+            background-color: rgb(0 0 0 / 0.0);
+        }
+
+        html[theme='dark'] & {
+            background-color: $black;
+        }
+
         &_item {
             @include mixins.flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 20px;
 
+            @media screen and (max-width: 1250px) {
+                padding: 42px 50px;
+                border-radius: 45px;
+                background-color: $dark;
+            }
+
             &:nth-child(2) {
                 padding-left: 64px;
                 padding-right: 64px;
                 border-left: 1px solid #ffffff;
                 border-right: 1px solid #ffffff;
+
+                @media screen and (max-width: 1250px) {
+                    padding: 42px 50px;
+                    border: none;
+                }
             }
 
             .item_item-text {
@@ -659,6 +732,10 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 290px;
+
+            html[theme='dark'] & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -739,6 +816,10 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
+
+            html[theme='dark'] & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -760,6 +841,10 @@ input[type="radio"] {
             border-radius: 45px;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
+
+            html[theme='dark'] & {
+                background-color: #ffffff;
+            }
 
             &:hover {
                 transform: translateY(-5px);
@@ -854,6 +939,10 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
+
+            html[theme='dark'] & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -866,6 +955,10 @@ input[type="radio"] {
         padding-bottom: 68px;
         background-color: $dark;
         border-radius: 45px;
+
+        html[theme='dark'] & {
+            background-color: $black;
+        }
 
         &-items {
             @include mixins.flex;
@@ -897,6 +990,10 @@ input[type="radio"] {
                         transform: rotate(-45deg);
                         bottom: -21px;
                         left: 100px;
+
+                        html[theme='dark'] & {
+                            background-color: $black;
+                        }
                     }
                 }
 
@@ -963,6 +1060,10 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 320px;
+
+            html[theme='dark'] & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -1057,6 +1158,10 @@ input[type="radio"] {
     padding: 55px 68px 50px;
     background-color: $dark;
     border-radius: 45px 45px 0 0;
+
+    html[theme='dark'] & {
+        background-color: $black;
+    }
 
     &-nav {
         @include mixins.flex;
