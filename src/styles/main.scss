@@ -22,6 +22,7 @@ body {
     color: $black;
     transition: 0.5s ease-out;
     background-color: #ffffff;
+
 }
 
 html[theme='dark'] body {
@@ -34,18 +35,38 @@ h1 {
     html[theme='dark'] & {
         color: #ffffff;
     }
+
+    @media screen and (max-width: 1250px) {
+        font-size: 43px;
+        line-height: 55px;
+    }
 }
 
 h2 {
     @include mixins.h2;
+
+    @media screen and (max-width: 1250px) {
+        font-size: 36px;
+        line-height: 46px;
+    }
 }
 
 h3 {
     @include mixins.h3;
+
+    @media screen and (max-width: 1250px) {
+        font-size: 26px;
+        line-height: 33px;
+    }
 }
 
 h4 {
     @include mixins.h4;
+
+    @media screen and (max-width: 1250px) {
+        font-size: 18px;
+        line-height: 23px;
+    }
 }
 
 p {
@@ -90,11 +111,33 @@ input[type="radio"] {
     transition: 500ms;
 
     @media screen and (max-width: 1250px) {
-        width: 1000px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     &-logo {
         padding: 10px 0;
+
+        &_logo {
+            @media screen and (max-width: 1250px) {
+                display: none;
+            }
+        }
+
+        &_logo-adaptive {
+            display: none;
+
+            @media screen and (max-width: 1250px) {
+                display: block;
+            }
+        }
     }
 
     &-nav {
@@ -105,8 +148,30 @@ input[type="radio"] {
             gap: 40px;
             list-style: none;
 
+            @media screen and (max-width: 1250px) {
+                gap: 20px;
+            }
+
+            .menu-button {
+                display: none;
+                transform: scale(1.2);
+
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                }
+            }
+
+            .mode-item {
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                }
+            }
 
             &_item {
+
+                @media screen and (max-width: 1024px) {
+                    display: none;
+                }
 
                 & a {
                     position: relative;
@@ -130,6 +195,10 @@ input[type="radio"] {
 
                 .item_item-button {
                     @include mixins.button;
+
+                    @media screen and (max-width: 1024px) {
+                        display: none;
+                    }
 
                     &:hover {
                         @include mixins.button-hover;
@@ -188,14 +257,54 @@ input[type="radio"] {
     }
 }
 
+.menu {
+    @include mixins.flex;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+    z-index: 2;
+
+    #menuExit {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        background-color: rgb(0 0 0 / 0.0);
+        border: none;
+    }
+
+    &-items {
+        @include mixins.flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .menu_item {
+            list-style: none;
+
+            & a {
+                @include mixins.text;
+                text-decoration: none;
+                color: #ffffff
+            }
+        }
+    }
+}
+
 .main {
     @include mixins.container;
     @include mixins.flex;
     flex-direction: column;
     margin-top: 70px;
+    overflow: hidden;
 
     @media screen and (max-width: 1250px) {
-        width: 1000px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     &-content {
@@ -210,9 +319,40 @@ input[type="radio"] {
             gap: 35px;
             width: 530px;
 
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+            }
+
             &_title {
                 @include mixins.h1;
                 margin: 0;
+
+                @media screen and (max-width: 1250px) {
+                    font-size: 43px;
+                    line-height: 55px;
+                }
+
+                @media screen and (max-width: 1024px) {
+                    width: 500px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                    font-size: 43px;
+                    line-height: 55px;
+                }
+            }
+
+            & img {
+                display: none;
+
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
             }
 
             &_text {
@@ -223,17 +363,39 @@ input[type="radio"] {
                 line-height: 28px;
                 color: $black;
 
+                @media screen and (max-width: 1024px) {
+                    width: 500px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    @include mixins.text-mobile;
+                    width: 100%;
+                }
+
                 html[theme='dark'] & {
                     color: #ffffff;
+                }
+
+                @media screen and (max-width: 1250px) {
+                    font-size: 16px;
+                    line-height: 24px;
                 }
 
             }
 
             &_button {
                 @include mixins.button;
+                background-color: $black;
+                color: #ffffff;
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
 
                 &:hover {
                     @include mixins.button-hover;
+                    background-color: #ffffff;
+                    color: $black;
                 }
             }
         }
@@ -242,6 +404,15 @@ input[type="radio"] {
             position: relative;
             width: 530px;
             height: 480px;
+
+            @media screen and (max-width: 1250px) {
+                width: 530px;
+                height: 480px;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
 
             &_image {
                 position: absolute;
@@ -402,8 +573,51 @@ input[type="radio"] {
     &-logo {
         @include mixins.flex;
         justify-content: space-between;
+        margin-top: 70px;
+        width: 100%;
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+
+    }
+
+    &-logo-mob {
+        @include mixins.flex;
+        flex-direction: column;
+        display: none;
         width: 100%;
         margin-top: 70px;
+
+        @media screen and (max-width: 1024px) {
+            display: flex;
+        }
+
+        .section-first {
+            @include mixins.flex;
+            justify-content: space-around;
+            width: 100%;
+            position: relative;
+            gap: 20px;
+            left: 30px;
+
+            @media screen and (max-width: 425px) {
+                left: -20px;
+            }
+        }
+
+        .section-second {
+            @include mixins.flex;
+            justify-content: space-around;
+            width: 100%;
+            position: relative;
+            gap: 20px;
+            right: 30px;
+
+            @media screen and (max-width: 425px) {
+                right: 60px;
+            }
+        }
 
     }
 
@@ -417,12 +631,24 @@ input[type="radio"] {
     margin-top: 70px;
 
     @media screen and (max-width: 1250px) {
-        width: 1000px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
     }
 
     &-text {
         @include mixins.flex;
         gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         &_title {
             padding-left: 7px;
@@ -433,7 +659,16 @@ input[type="radio"] {
 
         &_text {
             @include mixins.text;
-            width: 580px;
+            width: 470px;
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -446,6 +681,10 @@ input[type="radio"] {
         flex-wrap: wrap;
         gap: 40px;
         margin-top: 80px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
+        }
 
         &_item {
             @include mixins.flex;
@@ -463,7 +702,12 @@ input[type="radio"] {
             @media screen and (max-width: 1250px) {
                 width: 390px;
                 height: 322px;
-                padding: 50px 50px 50px 50px;
+                padding: 30px;
+            }
+
+            @media screen and (max-width: 375px) {
+                width: 260px;
+                height: 322px;
             }
 
             &:hover {
@@ -523,12 +767,21 @@ input[type="radio"] {
 
                 @media screen and (max-width: 1250px) {
                     top: 130px;
-                    right: 0;
+                    right: 30px;
+                }
+
+                @media screen and (max-width: 375px) {
+                    top: 150px;
+                    right: -10px;
                 }
 
                 & img {
                     @media screen and (max-width: 1250px) {
-                        transform: scale(0.5);
+                        transform: scale(0.8);
+                    }
+
+                    @media screen and (max-width: 375px) {
+                        transform: scale(0.6);
                     }
                 }
             }
@@ -571,20 +824,51 @@ input[type="radio"] {
         background-color: $grey;
         border-radius: 45px;
 
+        @media screen and (max-width: 1250px) {
+            margin-top: 70px;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 50px;
+        }
+
+        @media screen and (max-width: 425px) {
+            padding: 20px;
+        }
+
         &_proposal-title {
             @include mixins.h3;
+
+            @media screen and (max-width: 768px) {
+                font-size: 26px;
+                line-height: 33px;
+            }
         }
 
         &_proposal-text {
             @include mixins.text;
             width: 500px;
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
         }
 
         &_proposal-button {
             & button {
                 @include mixins.button;
+                @include mixins.text;
                 background-color: $black;
                 color: #ffffff;
+
+                @media screen and (max-width: 768px) {
+                    @include mixins.text-mobile;
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 425px) {
+                    padding: 15px;
+                }
 
                 &:hover {
                     @include mixins.button-hover;
@@ -602,6 +886,10 @@ input[type="radio"] {
             @media screen and (max-width: 1250px) {
                 right: 90px;
             }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
         }
     }
 }
@@ -615,12 +903,24 @@ input[type="radio"] {
     overflow: hidden;
 
     @media screen and (max-width: 1250px) {
-        width: 1000px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
     }
 
     &-text {
         @include mixins.flex;
         gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         &_title {
             padding-left: 7px;
@@ -631,7 +931,16 @@ input[type="radio"] {
 
         &_text {
             @include mixins.text;
-            width: 580px;
+            width: 470px;
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -649,8 +958,13 @@ input[type="radio"] {
         width: 100%;
 
         @media screen and (max-width: 1250px) {
+            gap: 20px;
             padding: 0;
             background-color: rgb(0 0 0 / 0.0);
+        }
+
+        @media screen and (max-width: 1250px) {
+            margin-top: 30px;
         }
 
         html[theme='dark'] & {
@@ -662,11 +976,17 @@ input[type="radio"] {
             flex-direction: column;
             align-items: flex-start;
             gap: 20px;
+            position: relative;
+            background-color: $dark;
 
             @media screen and (max-width: 1250px) {
                 padding: 42px 50px;
                 border-radius: 45px;
-                background-color: $dark;
+            }
+
+            @media screen and (max-width: 425px) {
+                padding: 32px 40px;
+                right: 20px;
             }
 
             &:nth-child(2) {
@@ -679,11 +999,23 @@ input[type="radio"] {
                     padding: 42px 50px;
                     border: none;
                 }
+
             }
 
             .item_item-text {
                 width: 280px;
                 color: #ffffff;
+
+                @media screen and (max-width: 1250px) {
+                    width: 250px;
+                    height: 130px;
+                }
+
+                @media screen and (max-width: 1250px) {
+                    width: 230px;
+                    height: 170px;
+                }
+
             }
 
             .item_item-link {
@@ -718,9 +1050,25 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 140px;
 
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
     &-text {
         @include mixins.flex;
         gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         &_title {
             padding-left: 7px;
@@ -731,7 +1079,16 @@ input[type="radio"] {
 
         &_text {
             @include mixins.text;
-            width: 290px;
+            width: 470px;
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -746,6 +1103,10 @@ input[type="radio"] {
         width: 100%;
         margin-top: 80px;
 
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
+        }
+
         &_item {
             @include mixins.flex;
             flex-direction: column;
@@ -756,6 +1117,14 @@ input[type="radio"] {
             border-radius: 45px;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
+
+            @media screen and (max-width: 600px) {
+                padding: 30px 30px;
+            }
+
+            @media screen and (max-width: 425px) {
+                padding: 10px 10px;
+            }
 
             &:hover {
                 transform: translateY(-5px);
@@ -774,10 +1143,20 @@ input[type="radio"] {
                     font-weight: 500;
                     font-size: 60px;
                     line-height: 77px;
+
+                    @media screen and (max-width: 600px) {
+                        font-size: 30px;
+                        margin-right: 10px;
+                    }
                 }
 
                 &_title {
                     width: 100%;
+
+                    @media screen and (max-width: 600px) {
+                        font-size: 18px;
+                        line-height: 23px;
+                    }
                 }
 
                 &_button {
@@ -803,19 +1182,45 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 140px;
 
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
     &-text {
         @include mixins.flex;
         gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         &_title {
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
+            border-radius: 7px;
         }
 
         &_text {
             @include mixins.text;
             width: 470px;
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -830,6 +1235,20 @@ input[type="radio"] {
         width: 100%;
         margin-top: 80px;
 
+        @media screen and (max-width: 1250px) {
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            gap: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 30px;
+        }
+
         .team-item {
             @include mixins.flex;
             flex-direction: column;
@@ -841,6 +1260,11 @@ input[type="radio"] {
             border-radius: 45px;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 0;
+            }
+
 
             html[theme='dark'] & {
                 background-color: #ffffff;
@@ -875,6 +1299,11 @@ input[type="radio"] {
                 & p {
                     @include mixins.text;
                     height: 115px;
+
+                    @media screen and (max-width: 425px) {
+                        @include mixins.text-mobile;
+                        height: 140px;
+                    }
                 }
             }
 
@@ -883,6 +1312,11 @@ input[type="radio"] {
                 top: 40px;
                 right: 35px;
                 cursor: pointer;
+
+                @media screen and (max-width: 425px) {
+                    top: 20px;
+                    right: 15px;
+                }
 
                 &:hover svg {
                     transform: scale(1.1);
@@ -902,9 +1336,14 @@ input[type="radio"] {
         justify-content: flex-end;
         width: 100%;
 
+        @media screen and (max-width: 1024px) {
+            justify-content: center;
+        }
+
         & button {
             @include mixins.button;
-            padding: 20px 76px;
+            @include mixins.text;
+            padding: 20px 66px;
             border-radius: 14px;
             background-color: $black;
             color: #ffffff;
@@ -925,9 +1364,25 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 140px;
 
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
     &-text {
         @include mixins.flex;
         gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         &_title {
             padding-left: 7px;
@@ -939,6 +1394,15 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -978,6 +1442,12 @@ input[type="radio"] {
                     border: 1px solid $green;
                     border-radius: 45px;
 
+                    @media screen and (max-width: 600px) {
+                        @include mixins.text-mobile;
+                        width: 230px;
+                        padding: 30px 30px;
+                    }
+
                     &::after {
                         content: '';
                         position: absolute;
@@ -990,6 +1460,10 @@ input[type="radio"] {
                         transform: rotate(-45deg);
                         bottom: -21px;
                         left: 100px;
+
+                        @media screen and (max-width: 600px) {
+                            left: 45px;
+                        }
 
                         html[theme='dark'] & {
                             background-color: $black;
@@ -1021,6 +1495,12 @@ input[type="radio"] {
             margin-top: 124px;
             width: 560px;
 
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                margin-top: 60px;
+                padding: 0 20px;
+            }
+
             & svg {
                 cursor: pointer;
             }
@@ -1028,6 +1508,10 @@ input[type="radio"] {
             & ul {
                 @include mixins.flex;
                 gap: 20px;
+
+                @media screen and (max-width: 768px) {
+                    gap: 15px;
+                }
 
                 & li {
                     list-style: none;
@@ -1046,20 +1530,46 @@ input[type="radio"] {
     position: relative;
     margin-top: 140px;
 
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
     &-text {
         @include mixins.flex;
         gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         &_title {
             padding-left: 7px;
             padding-right: 7px;
             background-color: $green;
             border-radius: 7px;
+
         }
 
         &_text {
             @include mixins.text;
             width: 320px;
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -1072,6 +1582,7 @@ input[type="radio"] {
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
+        position: relative;
         width: 100%;
         margin-top: 80px;
         padding: 60px 100px 80px;
@@ -1081,9 +1592,22 @@ input[type="radio"] {
         background-repeat: no-repeat;
         background-position: bottom 50% right -360px;
 
+        @media screen and (max-width: 1024px) {
+            background-image: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 40px 30px 50px;
+        }
+
         &_radio {
             @include mixins.flex;
             gap: 35px;
+
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
             & div {
                 @include mixins.flex;
@@ -1118,6 +1642,10 @@ input[type="radio"] {
                     border-radius: 14px;
                     border: 1px solid $black;
 
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+
                 }
 
                 & textarea[name="message"] {
@@ -1129,6 +1657,10 @@ input[type="radio"] {
                     border: 1px solid $black;
                     resize: none;
                     overflow: hidden;
+
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1140,6 +1672,13 @@ input[type="radio"] {
             color: #ffffff;
             font-size: 20px;
             line-height: 28px;
+
+            @media screen and (max-width: 768px) {
+                position: absolute;
+                right: 0;
+                bottom: -90px;
+                width: 100%;
+            }
 
             &:hover {
                 @include mixins.button-hover;
@@ -1159,6 +1698,16 @@ input[type="radio"] {
     background-color: $dark;
     border-radius: 45px 45px 0 0;
 
+    @media screen and (max-width: 1250px) {
+        width: calc(100% - 60px);
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 30px 20px 30px;
+        margin-top: 180px;
+    }
+
     html[theme='dark'] & {
         background-color: $black;
     }
@@ -1168,9 +1717,24 @@ input[type="radio"] {
         justify-content: space-between;
         width: 100%;
 
+        &_logo {
+            @media screen and (max-width: 1024px) {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
         &_nav {
             @include mixins.flex;
-            gap: 40px;
+            gap: 20px;
+
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
 
             & li {
                 list-style: none;
@@ -1198,6 +1762,10 @@ input[type="radio"] {
                     left: 0;
                     background-color: #ffffff;
                     transition: 0.25s ease-out;
+
+                    @media screen and (max-width: 1024px) {
+                        display: none;
+                    }
                 }
 
                 & a:hover::after {
@@ -1212,6 +1780,15 @@ input[type="radio"] {
         &_social {
             @include mixins.flex;
             gap: 20px;
+
+            @media screen and (max-width: 1024px) {
+                position: relative;
+                top: 550px;
+            }
+
+            @media screen and (max-width: 768px) {
+                top: 600px;
+            }
 
             & a {
                 text-decoration: none;
@@ -1234,11 +1811,26 @@ input[type="radio"] {
         width: 100%;
         padding: 66px 0 50px;
 
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            padding: 0 40px 59px;
+            margin-top: -30px;
+            margin-bottom: 40px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            padding: 0 0 59px;
+        }
+
         .form-info {
             @include mixins.flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 27px;
+
+            @media screen and (max-width: 1250px) {
+                align-items: center;
+            }
 
             &_title {
                 padding: 0 7px 0;
@@ -1253,8 +1845,25 @@ input[type="radio"] {
                 gap: 20px;
                 width: 340px;
 
+                @media screen and (max-width: 1024px) {
+                    align-items: center;
+                    margin-bottom: 37px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 280px;
+                }
+
                 & p {
                     color: #ffffff;
+
+                    @media screen and (max-width: 1024px) {
+                        text-align: center;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        width: 200px;
+                    }
                 }
             }
         }
@@ -1266,12 +1875,25 @@ input[type="radio"] {
             background-color: #292A32;
             border-radius: 14px;
 
+            @media screen and (max-width: 1250px) {
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+                padding: 58px 20px 59px;
+            }
+
             & input {
                 @include mixins.text;
                 padding: 25px 32px;
                 border: 1px solid #ffffff;
                 border-radius: 14px;
                 background-color: #292A32;
+
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
 
                 &::placeholder {
                     color: #ffffff;
@@ -1284,6 +1906,14 @@ input[type="radio"] {
                 padding: 25px 40px;
                 border-radius: 14px;
                 background-color: $green;
+
+                @media screen and (max-width: 1250px) {
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 25px 10px;
+                }
 
                 &:hover {
                     @include mixins.button-hover;
@@ -1302,8 +1932,22 @@ input[type="radio"] {
         padding-top: 50px;
         border-top: 1px solid #ffffff;
 
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
         & p {
             color: #ffffff;
+
+            @media screen and (max-width: 1024px) {
+                width: 280px;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+            }
+
+
         }
 
         & a {
@@ -1329,6 +1973,10 @@ input[type="radio"] {
             left: 0;
             background-color: #ffffff;
             transition: 0.25s ease-out;
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
         }
 
         & a:hover::after {

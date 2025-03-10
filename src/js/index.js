@@ -8,6 +8,8 @@ import './../styles/main.scss';
 
       this.processItemOpen();
       this.darkTheme();
+      this.exitMenu();
+      this.menuOpen();
 
     },
 
@@ -53,6 +55,24 @@ import './../styles/main.scss';
           headerLogo.setAttribute("src", "images/Logo.png");
         }
       })
+    },
+
+    menuOpen() {
+      const menuExit = document.getElementById("menu");
+      const menu = document.querySelector(".menu");
+      menuExit.addEventListener("click", function() {
+        console.log("asdasd")
+        menu.style.display = "flex";
+      });
+    },
+
+    exitMenu() {
+      const menuExit = document.getElementById("menuExit");
+      const menu = document.querySelector(".menu");
+      menuExit.addEventListener("click", function() {
+        console.log("asdasd")
+        menu.style.display = "none";
+      });
     }
 
   }
