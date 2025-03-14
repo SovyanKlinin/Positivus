@@ -4,12 +4,156 @@ import './../styles/main.scss';
 
   const index = {
 
+    reviewText: [
+      'We have been working with Positivus for the past' +
+      'year and have seen a significant increase in website' +
+      'traffic and leads as a result of their efforts.' +
+      'The team is professional, responsive, and truly' +
+      'cares about the success of our business.We highly',
+
+      'We have been working with Positivus for the past' +
+      'year and have seen a significant increase in website' +
+      'traffic and leads as a result of their efforts.' +
+      'The team is professional, responsive, and truly' +
+      'cares about the success of our business.We highly' +
+      'recommend Positivus to any company looking to',
+
+      'We have been working with Positivus for the past' +
+      'year and have seen a significant increase in website' +
+      'traffic and leads as a result of their efforts.',
+
+      'We have been working with Positivus for the past' +
+      'year and have seen a significant increase in website' +
+      'traffic and leads as a result of their efforts.' +
+      'The team is professional, responsive, and truly',
+
+      'We have been working with Positivus for the past' +
+      'year and have seen a significant increase in website' +
+      'traffic and leads as a result of their efforts.' +
+      'The team is professional, responsive, and truly' +
+      'cares about the success of our business.We highly' +
+      'recommend Positivus to any company looking to' +
+      'grow their online presence.',
+    ],
+
+    reviewName: [
+      'John Smith',
+      'Jane Doe',
+      'Michael Brown',
+      'Emily Johnson',
+      'Brian Williams',
+    ],
+
+    reviewPosition: [
+      'Marketing Director at XYZ Corp',
+      'CEO and Founder',
+      'Director of Operations',
+      'Senior SEO Specialist',
+      'PPC Manager',
+    ],
+
     init() {
 
       this.processItemOpen();
       this.darkTheme();
       this.exitMenu();
       this.menuOpen();
+      this.reviews(this.reviewText, this.reviewName, this.reviewPosition);
+
+
+    },
+
+    reviews(text, name, position) {
+
+      const reviewsItems = document.querySelector('.reviews-items');
+      const arrowRight = document.querySelector('#arrowRight');
+      const arrowLeft = document.querySelector('#arrowLeft');
+      const reviewsButton = document.querySelectorAll(".rewiewButton");
+
+      function appendItem(i) {
+        const reviewsItemsItem = document.createElement('div');
+        reviewsItemsItem.id = i;
+        const itemText = document.createElement('p');
+        const itemInfo = document.createElement('div');
+        const itemInfoName = document.createElement('h4');
+        const itemInfoPosition = document.createElement('p');
+        itemInfo.className = "item-info";
+        reviewsItemsItem.className = "reviews-items_item";
+        itemText.className = "item-text";
+        itemText.innerText = text[i];
+        itemInfoName.innerText = name[i];
+        itemInfoPosition.innerText = position[i];
+        reviewsItems.append(reviewsItemsItem);
+        reviewsItemsItem.appendChild(itemText);
+        reviewsItemsItem.appendChild(itemInfo);
+        itemInfo.appendChild(itemInfoName);
+        itemInfo.appendChild(itemInfoPosition);
+      }
+
+      function prependItem(i) {
+        const reviewsItemsItem = document.createElement('div');
+        reviewsItemsItem.id = i;
+        const itemText = document.createElement('p');
+        const itemInfo = document.createElement('div');
+        const itemInfoName = document.createElement('h4');
+        const itemInfoPosition = document.createElement('p');
+        itemInfo.className = "item-info";
+        reviewsItemsItem.className = "reviews-items_item";
+        itemText.className = "item-text";
+        itemText.innerText = text[i];
+        itemInfoName.innerText = name[i];
+        itemInfoPosition.innerText = position[i];
+        reviewsItems.prepend(reviewsItemsItem);
+        reviewsItemsItem.appendChild(itemText);
+        reviewsItemsItem.appendChild(itemInfo);
+        itemInfo.appendChild(itemInfoName);
+        itemInfo.appendChild(itemInfoPosition);
+      }
+
+      appendItem(4);
+      appendItem(0);
+      appendItem(1);
+
+      reviewsButton[0].style.transform = "scale(1.3)";
+
+      arrowLeft.addEventListener('click', function () {
+
+        const firstItem = document.querySelector(".reviews-items_item");
+        const lastItem = reviewsItems.lastElementChild;
+        reviewsButton.forEach((item) => {
+          item.style.transform = "scale(1.0)";
+        });
+
+        if (firstItem.id > 0) {
+          prependItem(firstItem.id - 1);
+          reviewsButton[firstItem.id].style.transform = "scale(1.3)";
+          lastItem.remove();
+        } else {
+          prependItem(4);
+          reviewsButton[0].style.transform = "scale(1.3)";
+          lastItem.remove();
+        }
+      });
+
+      arrowRight.addEventListener('click', function () {
+
+        const firstItem = document.querySelector(".reviews-items_item");
+        const lastItem = document.getElementsByClassName("reviews-items_item")[2];
+        reviewsButton.forEach((item) => {
+          item.style.transform = "scale(1.0)";
+        });
+
+        if (lastItem.id < 4) {
+          appendItem(Number(lastItem.id) + 1);
+          reviewsButton[lastItem.id].style.transform = "scale(1.3)";
+          firstItem.remove();
+        } else {
+          appendItem(0);
+          reviewsButton[4].style.transform = "scale(1.3)";
+          firstItem.remove();
+        }
+        
+      });
 
     },
 
@@ -60,7 +204,7 @@ import './../styles/main.scss';
     menuOpen() {
       const menuExit = document.getElementById("menu");
       const menu = document.querySelector(".menu");
-      menuExit.addEventListener("click", function() {
+      menuExit.addEventListener("click", function () {
         console.log("asdasd")
         menu.style.display = "flex";
       });
@@ -69,11 +213,11 @@ import './../styles/main.scss';
     exitMenu() {
       const menuExit = document.getElementById("menuExit");
       const menu = document.querySelector(".menu");
-      menuExit.addEventListener("click", function() {
+      menuExit.addEventListener("click", function () {
         console.log("asdasd")
         menu.style.display = "none";
       });
-    }
+    },
 
   }
 

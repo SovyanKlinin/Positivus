@@ -5,7 +5,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
     entry: {
         index: './src/js/index.js',
-        test: './src/js/test.js'
+        about: './src/js/about.js'
     },
 
     output: {
@@ -76,9 +76,9 @@ module.exports = {
             chunks: ['index'],
         }),
         new HtmlWebpackPlugin({
-            filename: 'templates/test.html',
-            template: './src/templates/test.html',
-            chunks: ['test'],
+            filename: 'templates/about.html',
+            template: './src/templates/about.html',
+            chunks: ['about'],
         }),
 
     ],
