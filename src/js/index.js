@@ -167,7 +167,6 @@ import './../styles/main.scss';
       itemVisibleButton.forEach((item) => {
         item.addEventListener("click", function () {
           const itemId = item.id;
-          console.log(itemId);
 
           if (itemVisibleButtonUse[itemId].attributes.href.value == "images/svg.svg#plus") {
             processItemsItem[itemId].style.backgroundColor = "#B9FF66";
@@ -205,7 +204,6 @@ import './../styles/main.scss';
       const menuExit = document.getElementById("menu");
       const menu = document.querySelector(".menu");
       menuExit.addEventListener("click", function () {
-        console.log("asdasd")
         menu.style.display = "flex";
       });
     },
@@ -214,7 +212,6 @@ import './../styles/main.scss';
       const menuExit = document.getElementById("menuExit");
       const menu = document.querySelector(".menu");
       menuExit.addEventListener("click", function () {
-        console.log("asdasd")
         menu.style.display = "none";
       });
     },

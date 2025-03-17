@@ -2,9 +2,10 @@ $spacegrotesk-font-path: "./../assets/fonts/SpaceGrotesk";
 
 @mixin space-grotesk-regular {
     font-family: "SpaceGrotesk Regular", sans-serif;
+    font-style: normal;
 }
 
 @font-face {
     src: url("#{$spacegrotesk-font-path}/SpaceGrotesk-Regular.woff2") format("woff2");
-    font-family: "Space Grotesk Regular";
+    font-family: "SpaceGrotesk Regular";
 }
