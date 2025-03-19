@@ -185,17 +185,17 @@ import './../styles/main.scss';
       })
     },
 
-    darkTheme() {
+    darkTheme () {
       const themeButton = document.getElementById("themeButton");
       const headerLogo = document.getElementById("headerLogo");
 
       themeButton.addEventListener('change', function () {
         if (this.checked) {
           document.documentElement.setAttribute('theme', 'dark');
-          headerLogo.setAttribute("src", "images/Logo-white.png");
+          headerLogo.src = "./images/Logo-white.png";
         } else {
           document.documentElement.removeAttribute('theme', 'dark');
-          headerLogo.setAttribute("src", "images/Logo.png");
+          headerLogo.src = "./images/Logo.png";
         }
       })
     },
