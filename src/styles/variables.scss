@@ -9,10 +9,13 @@ $darkgrey: #292A32;
     --bg-color: #ffffff;
     --text-color: #000000;
     --green-border: #000000;
+    --dark-bg: #191A23;
 }
 
 html[theme='dark'] {
     --bg-color: #191A23;
     --text-color: #ffffff;
     --green-border: #B9FF66;
+    --dark-bg: #000000;
+    --white-bg: #ffffff;
 }
