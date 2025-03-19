@@ -22,47 +22,27 @@ body {
 }
 
 html[theme='dark'] body {
-    background-color: variables.$dark;
+    background-color: var(--bg-color);
 }
 
 h1 {
     @include mixins.h1;
-
-    html[theme='dark'] & {
-        color: #ffffff;
-    }
-
-    @media screen and (max-width: 1250px) {
-        font-size: 43px;
-        line-height: 55px;
-    }
+ 
 }
 
 h2 {
     @include mixins.h2;
 
-    @media screen and (max-width: 1250px) {
-        font-size: 36px;
-        line-height: 46px;
-    }
 }
 
 h3 {
     @include mixins.h3;
 
-    @media screen and (max-width: 1250px) {
-        font-size: 26px;
-        line-height: 33px;
-    }
 }
 
 h4 {
     @include mixins.h4;
 
-    @media screen and (max-width: 1250px) {
-        font-size: 18px;
-        line-height: 23px;
-    }
 }
 
 p {
@@ -106,33 +86,11 @@ input[type="radio"] {
     margin-top: 60px;
     transition: 500ms;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 600px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
     &-logo {
         padding: 10px 0;
 
-        &_logo {
-            @media screen and (max-width: 1250px) {
-                display: none;
-            }
-        }
-
         &_logo-adaptive {
             display: none;
-
-            @media screen and (max-width: 1250px) {
-                display: block;
-            }
         }
     }
 
@@ -144,39 +102,17 @@ input[type="radio"] {
             gap: 40px;
             list-style: none;
 
-            @media screen and (max-width: 1250px) {
-                gap: 20px;
-            }
-
             .menu-button {
                 display: none;
                 transform: scale(1.2);
-
-                @media screen and (max-width: 1024px) {
-                    display: block;
-                }
-            }
-
-            .mode-item {
-                @media screen and (max-width: 1024px) {
-                    display: block;
-                }
             }
 
             &_item {
 
-                @media screen and (max-width: 1024px) {
-                    display: none;
-                }
-
                 & a {
                     position: relative;
-                    color: variables.$black;
+                    color: var(--text-color);
                     text-decoration: none;
-
-                    html[theme='dark'] & {
-                        color: #ffffff;
-                    }
 
                 }
 
@@ -191,10 +127,6 @@ input[type="radio"] {
 
                 .item_item-button {
                     @include mixins.button;
-
-                    @media screen and (max-width: 1024px) {
-                        display: none;
-                    }
 
                     &:hover {
                         @include mixins.button-hover;
@@ -226,11 +158,7 @@ input[type="radio"] {
                     float: right;
                     border-radius: 100px;
                     position: relative;
-                    border: 1px solid variables.$black;
-
-                    html[theme='dark'] & {
-                        border: 1px solid variables.$green;
-                    }
+                    border: 1px solid var(--green-border);
 
                     &::after {
                         content: '';
@@ -296,16 +224,6 @@ input[type="radio"] {
     flex-direction: column;
     margin-top: 70px;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        overflow-x: hidden visible;
-    }
-
     &-content {
         @include mixins.flex;
         justify-content: space-between;
@@ -318,40 +236,13 @@ input[type="radio"] {
             gap: 35px;
             width: 530px;
 
-            @media screen and (max-width: 1024px) {
-                width: 100%;
-            }
-
             &_title {
                 @include mixins.h1;
                 margin: 0;
-
-                @media screen and (max-width: 1250px) {
-                    font-size: 43px;
-                    line-height: 55px;
-                }
-
-                @media screen and (max-width: 1024px) {
-                    width: 500px;
-                }
-
-                @media screen and (max-width: 768px) {
-                    width: 100%;
-                    font-size: 43px;
-                    line-height: 55px;
-                }
             }
 
             & img {
                 display: none;
-
-                @media screen and (max-width: 1024px) {
-                    display: block;
-                }
-
-                @media screen and (max-width: 768px) {
-                    width: 100%;
-                }
             }
 
             &_text {
@@ -360,34 +251,15 @@ input[type="radio"] {
                 line-height: 28px;
                 color: variables.$black;
 
-                @media screen and (max-width: 1024px) {
-                    width: 500px;
-                }
-
-                @media screen and (max-width: 768px) {
-                    @include mixins.text-mobile;
-                    width: 100%;
-                }
-
                 html[theme='dark'] & {
                     color: #ffffff;
                 }
-
-                @media screen and (max-width: 1250px) {
-                    font-size: 16px;
-                    line-height: 24px;
-                }
-
             }
 
             &_button {
                 @include mixins.button;
                 background-color: variables.$black;
                 color: #ffffff;
-
-                @media screen and (max-width: 768px) {
-                    width: 100%;
-                }
 
                 &:hover {
                     @include mixins.button-hover;
@@ -401,15 +273,6 @@ input[type="radio"] {
             position: relative;
             width: 530px;
             height: 480px;
-
-            @media screen and (max-width: 1250px) {
-                width: 530px;
-                height: 480px;
-            }
-
-            @media screen and (max-width: 1024px) {
-                display: none;
-            }
 
             &_image {
                 position: absolute;
@@ -573,10 +436,6 @@ input[type="radio"] {
         margin-top: 70px;
         width: 100%;
 
-        @media screen and (max-width: 1024px) {
-            display: none;
-        }
-
     }
 
     &-logo-mob {
@@ -587,10 +446,6 @@ input[type="radio"] {
         margin-top: 70px;
         overflow: hidden;
 
-        @media screen and (max-width: 1024px) {
-            display: flex;
-        }
-
         .section-first {
             @include mixins.flex;
             justify-content: space-around;
@@ -598,10 +453,6 @@ input[type="radio"] {
             position: relative;
             gap: 20px;
             left: 30px;
-
-            @media screen and (max-width: 425px) {
-                left: -20px;
-            }
         }
 
         .section-second {
@@ -612,13 +463,8 @@ input[type="radio"] {
             gap: 20px;
             right: 30px;
 
-            @media screen and (max-width: 425px) {
-                right: 60px;
-            }
         }
-
     }
-
 }
 
 .services {
@@ -628,25 +474,9 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 70px;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 60px;
-    }
-
     &-text {
         @include mixins.flex;
         gap: 40px;
-
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-        }
 
         &_title {
             padding-left: 7px;
@@ -658,15 +488,6 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
-
-            @media screen and (max-width: 1024px) {
-                @include mixins.text-mobile;
-            }
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                text-align: center;
-            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -680,10 +501,6 @@ input[type="radio"] {
         gap: 40px;
         margin-top: 80px;
 
-        @media screen and (max-width: 768px) {
-            margin-top: 30px;
-        }
-
         &_item {
             @include mixins.flex;
             flex-direction: column;
@@ -696,17 +513,6 @@ input[type="radio"] {
             background-color: variables.$grey;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
-
-            @media screen and (max-width: 1250px) {
-                width: 390px;
-                height: 322px;
-                padding: 30px;
-            }
-
-            @media screen and (max-width: 375px) {
-                width: 260px;
-                height: 322px;
-            }
 
             &:hover {
                 transform: translateY(-5px);
@@ -738,9 +544,6 @@ input[type="radio"] {
                     p {
                         position: relative;
 
-                        @media screen and (max-width: 1250px) {
-                            display: none;
-                        }
                     }
 
                     p::after {
@@ -763,25 +566,6 @@ input[type="radio"] {
                 top: 70px;
                 right: 50px;
 
-                @media screen and (max-width: 1250px) {
-                    top: 130px;
-                    right: 30px;
-                }
-
-                @media screen and (max-width: 375px) {
-                    top: 150px;
-                    right: -10px;
-                }
-
-                & img {
-                    @media screen and (max-width: 1250px) {
-                        transform: scale(0.8);
-                    }
-
-                    @media screen and (max-width: 375px) {
-                        transform: scale(0.6);
-                    }
-                }
             }
         }
 
@@ -822,34 +606,14 @@ input[type="radio"] {
         background-color: variables.$grey;
         border-radius: 45px;
 
-        @media screen and (max-width: 1250px) {
-            margin-top: 70px;
-        }
-
-        @media screen and (max-width: 768px) {
-            padding: 50px;
-        }
-
-        @media screen and (max-width: 425px) {
-            padding: 20px;
-        }
-
         &_proposal-title {
             @include mixins.h3;
-
-            @media screen and (max-width: 768px) {
-                font-size: 26px;
-                line-height: 33px;
-            }
         }
 
         &_proposal-text {
             @include mixins.text;
             width: 500px;
 
-            @media screen and (max-width: 768px) {
-                width: 100%;
-            }
         }
 
         &_proposal-button {
@@ -858,15 +622,6 @@ input[type="radio"] {
                 @include mixins.text;
                 background-color: variables.$black;
                 color: #ffffff;
-
-                @media screen and (max-width: 768px) {
-                    @include mixins.text-mobile;
-                    width: 100%;
-                }
-
-                @media screen and (max-width: 425px) {
-                    padding: 15px;
-                }
 
                 &:hover {
                     @include mixins.button-hover;
@@ -881,13 +636,6 @@ input[type="radio"] {
             top: -30px;
             right: 130px;
 
-            @media screen and (max-width: 1250px) {
-                right: 90px;
-            }
-
-            @media screen and (max-width: 1024px) {
-                display: none;
-            }
         }
     }
 }
@@ -900,25 +648,9 @@ input[type="radio"] {
     margin-top: 163px;
     overflow: hidden;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 60px;
-    }
-
     &-text {
         @include mixins.flex;
         gap: 40px;
-
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-        }
 
         &_title {
             padding-left: 7px;
@@ -930,15 +662,6 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
-
-            @media screen and (max-width: 1024px) {
-                @include mixins.text-mobile;
-            }
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                text-align: center;
-            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -959,20 +682,6 @@ input[type="radio"] {
             background-color: variables.$black;
         }
 
-        @media screen and (max-width: 1250px) {
-            gap: 20px;
-            padding: 0;
-            background-color: rgb(0 0 0 / 0.0);
-        }
-
-        @media screen and (max-width: 768px) {
-            margin-top: 30px;
-
-            html[theme='dark'] & {
-                background-color: variables.$dark;
-            }
-        }
-
         &_item {
             @include mixins.flex;
             flex-direction: column;
@@ -983,16 +692,6 @@ input[type="radio"] {
 
             html[theme='dark'] & {
                 background-color: variables.$black;
-            }
-
-            @media screen and (max-width: 1250px) {
-                padding: 42px 50px;
-                border-radius: 45px;
-            }
-
-            @media screen and (max-width: 425px) {
-                padding: 32px 40px;
-                right: 20px;
             }
 
             &:nth-child(2) {
@@ -1011,16 +710,6 @@ input[type="radio"] {
             .item_item-text {
                 width: 280px;
                 color: #ffffff;
-
-                @media screen and (max-width: 1250px) {
-                    width: 250px;
-                    height: 130px;
-                }
-
-                @media screen and (max-width: 768px) {
-                    width: 230px;
-                    height: 170px;
-                }
 
             }
 
@@ -1056,25 +745,9 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 140px;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 60px;
-    }
-
     &-text {
         @include mixins.flex;
         gap: 40px;
-
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-        }
 
         &_title {
             padding-left: 7px;
@@ -1086,15 +759,6 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
-
-            @media screen and (max-width: 1024px) {
-                @include mixins.text-mobile;
-            }
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                text-align: center;
-            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -1109,10 +773,6 @@ input[type="radio"] {
         width: 100%;
         margin-top: 80px;
 
-        @media screen and (max-width: 768px) {
-            margin-top: 30px;
-        }
-
         &_item {
             @include mixins.flex;
             flex-direction: column;
@@ -1123,14 +783,6 @@ input[type="radio"] {
             border-radius: 45px;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
-
-            @media screen and (max-width: 600px) {
-                padding: 30px 30px;
-            }
-
-            @media screen and (max-width: 425px) {
-                padding: 10px 10px;
-            }
 
             &:hover {
                 transform: translateY(-5px);
@@ -1150,19 +802,11 @@ input[type="radio"] {
                     font-size: 60px;
                     line-height: 77px;
 
-                    @media screen and (max-width: 600px) {
-                        font-size: 30px;
-                        margin-right: 10px;
-                    }
                 }
 
                 &_title {
                     width: 100%;
 
-                    @media screen and (max-width: 600px) {
-                        font-size: 18px;
-                        line-height: 23px;
-                    }
                 }
 
                 &_button {
@@ -1188,25 +832,9 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 140px;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 60px;
-    }
-
     &-text {
         @include mixins.flex;
         gap: 40px;
-
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-        }
 
         &_title {
             padding-left: 7px;
@@ -1218,15 +846,6 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
-
-            @media screen and (max-width: 1024px) {
-                @include mixins.text-mobile;
-            }
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                text-align: center;
-            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -1241,20 +860,6 @@ input[type="radio"] {
         width: 100%;
         margin-top: 80px;
 
-        @media screen and (max-width: 1250px) {
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        @media screen and (max-width: 1024px) {
-            gap: 30px;
-        }
-
-        @media screen and (max-width: 768px) {
-            margin-bottom: 30px;
-        }
-
         .team-item {
             @include mixins.flex;
             flex-direction: column;
@@ -1266,11 +871,6 @@ input[type="radio"] {
             border-radius: 45px;
             box-shadow: 0px 5px 0px 0px rgb(0, 0, 0);
             transition: 0.25s ease-out;
-
-            @media screen and (max-width: 768px) {
-                margin-bottom: 0;
-            }
-
 
             html[theme='dark'] & {
                 background-color: #ffffff;
@@ -1306,10 +906,6 @@ input[type="radio"] {
                     @include mixins.text;
                     height: 115px;
 
-                    @media screen and (max-width: 425px) {
-                        @include mixins.text-mobile;
-                        height: 140px;
-                    }
                 }
             }
 
@@ -1318,11 +914,6 @@ input[type="radio"] {
                 top: 40px;
                 right: 35px;
                 cursor: pointer;
-
-                @media screen and (max-width: 425px) {
-                    top: 20px;
-                    right: 15px;
-                }
 
                 &:hover svg {
                     transform: scale(1.1);
@@ -1341,10 +932,6 @@ input[type="radio"] {
         @include mixins.flex;
         justify-content: flex-end;
         width: 100%;
-
-        @media screen and (max-width: 1024px) {
-            justify-content: center;
-        }
 
         & button {
             @include mixins.button;
@@ -1370,25 +957,9 @@ input[type="radio"] {
     align-items: flex-start;
     margin-top: 140px;
 
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 60px;
-    }
-
     &-text {
         @include mixins.flex;
         gap: 40px;
-
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-        }
 
         &_title {
             padding-left: 7px;
@@ -1400,15 +971,6 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 470px;
-
-            @media screen and (max-width: 1024px) {
-                @include mixins.text-mobile;
-            }
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                text-align: center;
-            }
 
             html[theme='dark'] & {
                 color: #ffffff;
@@ -1471,10 +1033,6 @@ input[type="radio"] {
                         bottom: -21px;
                         left: 100px;
 
-                        @media screen and (max-width: 600px) {
-                            left: 45px;
-                        }
-
                         html[theme='dark'] & {
                             background-color: variables.$black;
                         }
@@ -1487,10 +1045,6 @@ input[type="radio"] {
                     align-items: flex-start;
                     position: relative;
                     margin-top: 48px;
-
-                    @media screen and (max-width: 600px) {
-                        width: 100%;
-                    }
 
                     & h4 {
                         color: variables.$green;
@@ -1510,12 +1064,6 @@ input[type="radio"] {
             margin-top: 124px;
             width: 560px;
 
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                margin-top: 60px;
-                padding: 0 20px;
-            }
-
             & svg {
                 cursor: pointer;
                 transition: 0.25s;
@@ -1528,10 +1076,6 @@ input[type="radio"] {
             & ul {
                 @include mixins.flex;
                 gap: 20px;
-
-                @media screen and (max-width: 768px) {
-                    gap: 15px;
-                }
 
                 & li {
                     list-style: none;
@@ -1549,16 +1093,6 @@ input[type="radio"] {
     align-items: flex-start;
     position: relative;
     margin-top: 140px;
-
-    @media screen and (max-width: 1250px) {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 40px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 60px;
-    }
 
     &-text {
         @include mixins.flex;
@@ -1581,10 +1115,6 @@ input[type="radio"] {
         &_text {
             @include mixins.text;
             width: 320px;
-
-            @media screen and (max-width: 1024px) {
-                @include mixins.text-mobile;
-            }
 
             @media screen and (max-width: 768px) {
                 width: 100%;
@@ -1612,22 +1142,9 @@ input[type="radio"] {
         background-repeat: no-repeat;
         background-position: bottom 50% right -360px;
 
-        @media screen and (max-width: 1024px) {
-            background-image: none;
-        }
-
-        @media screen and (max-width: 768px) {
-            padding: 40px 30px 50px;
-        }
-
         &_radio {
             @include mixins.flex;
             gap: 35px;
-
-            @media screen and (max-width: 425px) {
-                flex-direction: column;
-                align-items: flex-start;
-            }
 
             & div {
                 @include mixins.flex;
@@ -1662,10 +1179,6 @@ input[type="radio"] {
                     border-radius: 14px;
                     border: 1px solid variables.$black;
 
-                    @media screen and (max-width: 768px) {
-                        width: 100%;
-                    }
-
                 }
 
                 & textarea[name="message"] {
@@ -1678,9 +1191,6 @@ input[type="radio"] {
                     resize: none;
                     overflow: hidden;
 
-                    @media screen and (max-width: 768px) {
-                        width: 100%;
-                    }
                 }
             }
         }
@@ -1692,13 +1202,6 @@ input[type="radio"] {
             color: #ffffff;
             font-size: 20px;
             line-height: 28px;
-
-            @media screen and (max-width: 768px) {
-                position: absolute;
-                right: 0;
-                bottom: -90px;
-                width: 100%;
-            }
 
             &:hover {
                 @include mixins.button-hover;
@@ -1718,16 +1221,6 @@ input[type="radio"] {
     background-color: variables.$dark;
     border-radius: 45px 45px 0 0;
 
-    @media screen and (max-width: 1250px) {
-        width: calc(100% - 60px);
-    }
-
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        padding: 30px 20px 30px;
-        margin-top: 180px;
-    }
-
     html[theme='dark'] & {
         background-color: variables.$black;
     }
@@ -1737,24 +1230,9 @@ input[type="radio"] {
         justify-content: space-between;
         width: 100%;
 
-        &_logo {
-            @media screen and (max-width: 1024px) {
-                margin-bottom: 10px;
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-            flex-direction: column;
-            gap: 20px;
-        }
-
         &_nav {
             @include mixins.flex;
             gap: 20px;
-
-            @media screen and (max-width: 1024px) {
-                flex-direction: column;
-            }
 
             & li {
                 list-style: none;
@@ -1783,9 +1261,6 @@ input[type="radio"] {
                     background-color: #ffffff;
                     transition: 0.25s ease-out;
 
-                    @media screen and (max-width: 1024px) {
-                        display: none;
-                    }
                 }
 
                 & a:hover::after {
@@ -1800,15 +1275,6 @@ input[type="radio"] {
         &_social {
             @include mixins.flex;
             gap: 20px;
-
-            @media screen and (max-width: 1024px) {
-                position: relative;
-                top: 550px;
-            }
-
-            @media screen and (max-width: 768px) {
-                top: 600px;
-            }
 
             & a {
                 text-decoration: none;
@@ -1831,26 +1297,11 @@ input[type="radio"] {
         width: 100%;
         padding: 66px 0 50px;
 
-        @media screen and (max-width: 1024px) {
-            flex-direction: column;
-            padding: 0 40px 59px;
-            margin-top: -30px;
-            margin-bottom: 40px;
-        }
-
-        @media screen and (max-width: 1024px) {
-            padding: 0 0 59px;
-        }
-
         .form-info {
             @include mixins.flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 27px;
-
-            @media screen and (max-width: 1250px) {
-                align-items: center;
-            }
 
             &_title {
                 padding: 0 7px 0;
@@ -1865,25 +1316,8 @@ input[type="radio"] {
                 gap: 20px;
                 width: 340px;
 
-                @media screen and (max-width: 1024px) {
-                    align-items: center;
-                    margin-bottom: 37px;
-                }
-
-                @media screen and (max-width: 768px) {
-                    width: 280px;
-                }
-
                 & p {
                     color: #ffffff;
-
-                    @media screen and (max-width: 1024px) {
-                        text-align: center;
-                    }
-
-                    @media screen and (max-width: 768px) {
-                        width: 200px;
-                    }
                 }
             }
         }
@@ -1895,25 +1329,12 @@ input[type="radio"] {
             background-color: #292A32;
             border-radius: 14px;
 
-            @media screen and (max-width: 1250px) {
-                flex-direction: column;
-            }
-
-            @media screen and (max-width: 1024px) {
-                width: 100%;
-                padding: 58px 20px 59px;
-            }
-
             & input {
                 @include mixins.text;
                 padding: 25px 32px;
                 border: 1px solid #ffffff;
                 border-radius: 14px;
                 background-color: #292A32;
-
-                @media screen and (max-width: 1024px) {
-                    width: 100%;
-                }
 
                 &::placeholder {
                     color: #ffffff;
@@ -1926,14 +1347,6 @@ input[type="radio"] {
                 padding: 25px 40px;
                 border-radius: 14px;
                 background-color: variables.$green;
-
-                @media screen and (max-width: 1250px) {
-                    width: 100%;
-                }
-
-                @media screen and (max-width: 768px) {
-                    padding: 25px 10px;
-                }
 
                 &:hover {
                     @include mixins.button-hover;
@@ -1952,22 +1365,8 @@ input[type="radio"] {
         padding-top: 50px;
         border-top: 1px solid #ffffff;
 
-        @media screen and (max-width: 1024px) {
-            flex-direction: column;
-            gap: 20px;
-        }
-
         & p {
             color: #ffffff;
-
-            @media screen and (max-width: 1024px) {
-                width: 280px;
-                font-size: 16px;
-                line-height: 24px;
-                text-align: center;
-            }
-
-
         }
 
         & a {
@@ -1981,7 +1380,6 @@ input[type="radio"] {
                 color: variables.$green;
                 transition: 0.25s ease-out;
             }
-
         }
 
         & a::after {
@@ -1994,9 +1392,6 @@ input[type="radio"] {
             background-color: #ffffff;
             transition: 0.25s ease-out;
 
-            @media screen and (max-width: 1024px) {
-                display: none;
-            }
         }
 
         & a:hover::after {
@@ -2004,6 +1399,921 @@ input[type="radio"] {
             bottom: -1px;
             background-color: variables.$green;
             transition: 0.25s ease-out;
+        }
+    }
+}
+
+// @media
+
+h1 {
+
+    @media screen and (max-width: 1250px) {
+        font-size: 43px;
+        line-height: 55px;
+    }
+}
+
+h2 {
+
+    @media screen and (max-width: 1250px) {
+        font-size: 36px;
+        line-height: 46px;
+    }
+}
+
+h3 {
+
+    @media screen and (max-width: 1250px) {
+        font-size: 26px;
+        line-height: 33px;
+    }
+}
+
+h4 {
+
+    @media screen and (max-width: 1250px) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
+
+.header {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    &-logo {
+
+        &_logo {
+            @media screen and (max-width: 1250px) {
+                display: none;
+            }
+        }
+
+        &_logo-adaptive {
+
+            @media screen and (max-width: 1250px) {
+                display: block;
+            }
+        }
+    }
+
+    &-nav {
+
+        .nav-items {
+
+            @media screen and (max-width: 1250px) {
+                gap: 20px;
+            }
+
+            .menu-button {
+
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                }
+            }
+
+            .mode-item {
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                }
+            }
+
+            &_item {
+
+                @media screen and (max-width: 1024px) {
+                    display: none;
+                }
+
+                .item_item-button {
+
+                    @media screen and (max-width: 1024px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        overflow-x: hidden visible;
+    }
+
+    &-content {
+
+        &-text {
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+            }
+
+            &_title {
+
+                @media screen and (max-width: 1250px) {
+                    font-size: 43px;
+                    line-height: 55px;
+                }
+
+                @media screen and (max-width: 1024px) {
+                    width: 500px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                    font-size: 43px;
+                    line-height: 55px;
+                }
+            }
+
+            & img {
+
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+
+            &_text {
+
+                @media screen and (max-width: 1024px) {
+                    width: 500px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    @include mixins.text-mobile;
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 1250px) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+
+            }
+
+            &_button {
+
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-image {
+
+            @media screen and (max-width: 1250px) {
+                width: 530px;
+                height: 480px;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+        }
+    }
+
+    &-logo {
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+
+    }
+
+    &-logo-mob {
+
+        @media screen and (max-width: 1024px) {
+            display: flex;
+        }
+
+        .section-first {
+
+            @media screen and (max-width: 425px) {
+                left: -20px;
+            }
+        }
+
+        .section-second {
+
+            @media screen and (max-width: 425px) {
+                right: 60px;
+            }
+        }
+    }
+}
+
+.services {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
+    &-text {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &-items {
+
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
+        }
+
+        &_item {
+
+            @media screen and (max-width: 1250px) {
+                width: 390px;
+                height: 322px;
+                padding: 30px;
+            }
+
+            @media screen and (max-width: 375px) {
+                width: 260px;
+                height: 322px;
+            }
+
+            .item_item-button {
+
+                & a {
+
+                    p {
+
+                        @media screen and (max-width: 1250px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .item_item-image {
+
+                @media screen and (max-width: 1250px) {
+                    top: 130px;
+                    right: 30px;
+                }
+
+                @media screen and (max-width: 375px) {
+                    top: 150px;
+                    right: -10px;
+                }
+
+                & img {
+                    @media screen and (max-width: 1250px) {
+                        transform: scale(0.8);
+                    }
+
+                    @media screen and (max-width: 375px) {
+                        transform: scale(0.6);
+                    }
+                }
+            }
+        }
+    }
+
+    .proposal {
+
+        @media screen and (max-width: 1250px) {
+            margin-top: 70px;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 50px;
+        }
+
+        @media screen and (max-width: 425px) {
+            padding: 20px;
+        }
+
+        &_proposal-text {
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        &_proposal-button {
+            & button {
+
+                @media screen and (max-width: 768px) {
+                    @include mixins.text-mobile;
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 425px) {
+                    padding: 15px;
+                }
+            }
+        }
+
+        &_proposal-image {
+
+            @media screen and (max-width: 1250px) {
+                right: 90px;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.case-studies {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
+    &-text {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &-content {
+
+        @media screen and (max-width: 1250px) {
+            gap: 20px;
+            padding: 0;
+            background-color: rgb(0 0 0 / 0.0);
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
+
+            html[theme='dark'] & {
+                background-color: variables.$dark;
+            }
+        }
+
+        &_item {
+
+            @media screen and (max-width: 1250px) {
+                padding: 42px 50px;
+                border-radius: 45px;
+            }
+
+            @media screen and (max-width: 425px) {
+                padding: 32px 40px;
+                right: 20px;
+            }
+
+            &:nth-child(2) {
+
+                @media screen and (max-width: 1250px) {
+                    padding: 42px 50px;
+                    border: none;
+                }
+            }
+
+            .item_item-text {
+
+                @media screen and (max-width: 1250px) {
+                    width: 250px;
+                    height: 130px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 230px;
+                    height: 170px;
+                }
+
+            }
+        }
+    }
+}
+
+.process {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
+    &-text {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &-items {
+
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
+        }
+
+        &_item {
+
+            @media screen and (max-width: 600px) {
+                padding: 30px 30px;
+            }
+
+            @media screen and (max-width: 425px) {
+                padding: 10px 10px;
+            }
+
+            .item-visible {
+
+                &_number {
+
+                    @media screen and (max-width: 600px) {
+                        font-size: 30px;
+                        margin-right: 10px;
+                    }
+                }
+
+                &_title {
+
+                    @media screen and (max-width: 600px) {
+                        font-size: 18px;
+                        line-height: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.team {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
+    &-text {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &-items {
+
+        @media screen and (max-width: 1250px) {
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            gap: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 30px;
+        }
+
+        .team-item {
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 0;
+            }
+
+            &_item-text {
+
+                & p {
+
+                    @media screen and (max-width: 425px) {
+                        @include mixins.text-mobile;
+                        height: 140px;
+                    }
+                }
+            }
+
+            &_link {
+
+                @media screen and (max-width: 425px) {
+                    top: 20px;
+                    right: 15px;
+                }
+            }
+        }
+    }
+
+    &-button {
+
+        @media screen and (max-width: 1024px) {
+            justify-content: center;
+        }
+    }
+}
+
+.testimonials {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
+    &-text {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .reviews {
+
+        &-items {
+
+            &_item {
+
+                .item-text {
+
+                    @media screen and (max-width: 600px) {
+                        @include mixins.text-mobile;
+                        width: 230px;
+                        height: 520px;
+                        padding: 30px 30px;
+                    }
+
+                    &::after {
+
+                        @media screen and (max-width: 600px) {
+                            left: 45px;
+                        }
+                    }
+                }
+
+                .item-info {
+
+                    @media screen and (max-width: 600px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &-nav {
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                margin-top: 60px;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+.contact {
+
+    @media screen and (max-width: 1250px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
+
+    &-text {
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+
+            @media screen and (max-width: 1024px) {
+                @include mixins.text-mobile;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &-form {
+
+        @media screen and (max-width: 1024px) {
+            background-image: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 40px 30px 50px;
+        }
+
+        &_radio {
+
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &_inputs {
+
+            & li {
+
+                & input {
+
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+
+                }
+
+                & textarea[name="message"] {
+
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &_button {
+
+            @media screen and (max-width: 768px) {
+                position: absolute;
+                right: 0;
+                bottom: -90px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.footer {
+
+    @media screen and (max-width: 1250px) {
+        width: calc(100% - 60px);
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 30px 20px 30px;
+        margin-top: 180px;
+    }
+
+    &-nav {
+
+        &_logo {
+            @media screen and (max-width: 1024px) {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &_nav {
+
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
+
+            & li {
+
+                & a::after {
+
+                    @media screen and (max-width: 1024px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &_social {
+
+            @media screen and (max-width: 1024px) {
+                position: relative;
+                top: 550px;
+            }
+
+            @media screen and (max-width: 768px) {
+                top: 600px;
+            }
+        }
+    }
+
+    &-form {
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            padding: 0 40px 59px;
+            margin-top: -30px;
+            margin-bottom: 40px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            padding: 0 0 59px;
+        }
+
+        .form-info {
+
+            @media screen and (max-width: 1250px) {
+                align-items: center;
+            }
+
+            &_text {
+
+                @media screen and (max-width: 1024px) {
+                    align-items: center;
+                    margin-bottom: 37px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 280px;
+                }
+
+                & p {
+
+                    @media screen and (max-width: 1024px) {
+                        text-align: center;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+
+        .form-form {
+
+            @media screen and (max-width: 1250px) {
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+                padding: 58px 20px 59px;
+            }
+
+            & input {
+
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+            }
+
+            & button {
+
+                @media screen and (max-width: 1250px) {
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 25px 10px;
+                }
+            }
+        }
+    }
+
+    &-copyright {
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        & p {
+
+            @media screen and (max-width: 1024px) {
+                width: 280px;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+            }
+        }
+
+        & a::after {
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
         }
     }
 }

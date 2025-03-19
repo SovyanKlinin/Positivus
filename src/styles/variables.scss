@@ -4,3 +4,15 @@ $black: #000000;
 $green: #B9FF66;
 $grey: #F3F3F3;
 $darkgrey: #292A32;
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --green-border: #000000;
+}
+
+html[theme='dark'] {
+    --bg-color: #191A23;
+    --text-color: #ffffff;
+    --green-border: #B9FF66;
+}
